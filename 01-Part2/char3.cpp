@@ -1,3 +1,16 @@
+/**********************************************
+* File: char3.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char pointer and memory, set the first two
+* bytes equal to characters, and then print their address
+* and values
+*
+* Lecture 01 - Part 2 - Slide 61
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

@@ -1,3 +1,15 @@
+/**********************************************
+* File: array4.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char array, sets all the characters
+* to Hello, World, and then prints their addresses and values
+*
+* Lecture 01 - Part 2 - Slide 65
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

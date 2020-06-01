@@ -1,3 +1,14 @@
+/**********************************************
+* File: char1.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char pointer and print its address
+*
+* Lecture 01 - Part 2 - Slides 48-49
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 
@@ -20,3 +31,4 @@ int main(void){
 
 	return 0;
 }
+

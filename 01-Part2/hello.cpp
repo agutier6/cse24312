@@ -5,18 +5,11 @@
 * 
 * This is the classic Hello, World program 
 *
-* Lecture 01 - Part 2 - Slide 26
+* Lecture 01 - Part 2 - Slides 27-29
 **********************************************/
 
 #include <iostream> /* std::cout, std::endl */
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
 	/* C++ Library translates std::endl to ASCII 10 */

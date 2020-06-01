@@ -1,3 +1,15 @@
+/**********************************************
+* File: void2.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a void pointer and print all the addresses
+* of the location of the characters
+*
+* Lecture 01 - Part 2 - Slides 55-56
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

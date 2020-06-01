@@ -1,3 +1,15 @@
+/**********************************************
+* File: char2.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char pointer and memory and print all the addresses
+* of the location of the characters
+*
+* Lecture 01 - Part 2 - Slide 57
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

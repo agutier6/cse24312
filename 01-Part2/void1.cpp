@@ -1,13 +1,17 @@
+/**********************************************
+* File: void1.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a void pointer and print its address
+*
+* Lecture 01 - Part 2 - Slide 47
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : void
-* Post-conditions: int
-* 
-* This is the main driver function for the program 
-********************************************/
 int main(void){
 	
 	long unsigned int numCharacters = 13;
@@ -20,3 +24,4 @@ int main(void){
 
 	return 0;
 }
+

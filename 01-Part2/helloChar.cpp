@@ -1,3 +1,14 @@
+/**********************************************
+* File: helloChar.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* An example of "Hello, World" with procedural
+* programming, char* pointers, and pointer arithmetic
+*
+* Lecture 01 - Part 2 - Slide 67
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

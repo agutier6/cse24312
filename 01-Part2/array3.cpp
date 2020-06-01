@@ -1,3 +1,16 @@
+/**********************************************
+* File: array3.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char array, set the first two
+* bytes equal to characters, and then print their address
+* and values
+*
+* Lecture 01 - Part 2 - Slide 62
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

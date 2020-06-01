@@ -1,3 +1,15 @@
+/**********************************************
+* File: void3.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a void point and memory, set the first two
+* bytes equal to characters, and then print their 
+*
+* Lecture 01 - Part 2 - Slide 57
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

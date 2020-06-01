@@ -7,7 +7,7 @@
 * become more familiar with C pointers, including
 * pointer addresses, data, adereferencing, and void pointers 
 *
-* Lecture 1 - Part 02 - Slide 33
+* Lecture 1 - Part 02 - Slides 34-40
 **********************************************/
 
 #include <iostream>

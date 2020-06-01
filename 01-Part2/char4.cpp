@@ -1,3 +1,15 @@
+/**********************************************
+* File: char4.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a char pointer and memory, sets all the characters
+* to Hello, World, and then prints their addresses and values
+*
+* Lecture 01 - Part 2 - Slide 64
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 
