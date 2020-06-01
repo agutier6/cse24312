@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for Chapter 2 - Into the Void
+# This is the Makefile for Lecture 01 - Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -35,6 +35,18 @@ hello: hello.o
 
 hello.o: hello.cpp
 	$(PP) $(CXXFLAGS) -c hello.cpp
+	
+	
+# C++ intPtr Example
+# Command: make intPtr
+intPtrObjs :=  intPtr.o
+
+intPtr: intPtr.o
+	$(PP) $(CXXFLAGS) -o intPtr $(intPtrObjs)
+	./intPtr
+
+intPtr.o: intPtr.cpp
+	$(PP) $(CXXFLAGS) -c intPtr.cpp
 
 
 # C++ void1, World Example
@@ -253,4 +265,4 @@ all: nothing hello ascii squareFunc
 
 # Make clean
 clean :
-	rm -rf *.o nothing hello void1 void2 void3 void4 helloVoid char1 char2 char3 char4 helloChar array1 array2 array3 array4 helloArray helloArray2 helloArray3
+	rm -rf *.o nothing hello intPtr void1 void2 void3 void4 helloVoid char1 char2 char3 char4 helloChar array1 array2 array3 array4 helloArray helloArray2 helloArray3

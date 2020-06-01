@@ -5,6 +5,8 @@
 * 
 * This is a basic program to show students how to 
 * implement "nothing" in C++
+*
+* Lecture 01 - Part 2 - Slide 22
 **********************************************/
 
 /********************************************

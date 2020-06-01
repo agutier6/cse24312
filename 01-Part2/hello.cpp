@@ -4,6 +4,8 @@
 * Email: matt.morrison@nd.edu
 * 
 * This is the classic Hello, World program 
+*
+* Lecture 01 - Part 2 - Slide 26
 **********************************************/
 
 #include <iostream> /* std::cout, std::endl */
