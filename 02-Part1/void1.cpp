@@ -6,7 +6,7 @@
 * This is a basic program to show students how to 
 * allocate a void pointer and print its address
 *
-* Lecture 01 - Part 2 - Slide 47
+* Lecture 02 - Part 1 - Slide 10
 **********************************************/
 
 #include <iostream>

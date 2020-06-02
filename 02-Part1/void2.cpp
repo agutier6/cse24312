@@ -7,7 +7,7 @@
 * allocate a void pointer and print all the addresses
 * of the location of the characters
 *
-* Lecture 01 - Part 2 - Slides 55-56
+* Lecture 02 - Part 1 - Slides 18-19
 **********************************************/
 
 #include <iostream>

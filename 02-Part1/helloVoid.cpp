@@ -6,7 +6,7 @@
 * An example of "Hello, World" with imperative
 * programming, void pointers, and pointer arithmetic
 *
-* Lecture 01 - Part 2 - Slide 65
+* Lecture 02 - Part 1 - Slide 29
 **********************************************/
 
 #include <iostream>

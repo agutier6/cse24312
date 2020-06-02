@@ -7,7 +7,7 @@
 * allocate a char pointer and memory and print all the addresses
 * of the location of the characters
 *
-* Lecture 01 - Part 2 - Slide 57
+* Lecture 02 - Part 1 - Slide 20
 **********************************************/
 
 #include <iostream>

@@ -7,7 +7,7 @@
 * allocate a char pointer and memory, sets all the characters
 * to Hello, World, and then prints their addresses and values
 *
-* Lecture 01 - Part 2 - Slide 64
+* Lecture 02 - Part 1 - Slide 27
 **********************************************/
 
 #include <iostream>

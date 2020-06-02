@@ -1,3 +1,14 @@
+/**********************************************
+* File: helloArray.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* An example of "Hello, World" with procedural
+* programming, char array, and array[] operators
+*
+* Lecture 02 - Part 1 - Slide 31
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

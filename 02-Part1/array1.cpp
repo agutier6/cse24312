@@ -6,7 +6,7 @@
 * This is a basic program to show students how to 
 * allocate a char array and print its address
 *
-* Lecture 01 - Part 2 - Slides 54
+* Lecture 02 - Part 1 - Slides 16
 **********************************************/
 
 #include <iostream>

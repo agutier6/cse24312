@@ -1,3 +1,15 @@
+/**********************************************
+* File: void4.cpp
+* Author: Matthew Morrison
+* Email: matt.morrison@nd.edu
+* 
+* This is a basic program to show students how to 
+* allocate a void pointer and memory, sets all the characters
+* to Hello, World, and then prints their addresses and values
+*
+* Lecture 02 - Part 1 - Slide 26
+**********************************************/
+
 #include <iostream>
 #include <cstdlib>
 

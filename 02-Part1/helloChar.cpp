@@ -6,7 +6,7 @@
 * An example of "Hello, World" with procedural
 * programming, char* pointers, and pointer arithmetic
 *
-* Lecture 01 - Part 2 - Slide 67
+* Lecture 02 - Part 1 - Slide 30
 **********************************************/
 
 #include <iostream>
