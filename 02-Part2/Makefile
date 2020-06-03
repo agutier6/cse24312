@@ -9,6 +9,8 @@ PP := g++
 # CFLAGS are the compiler flages for when we compile C code in this course
 FLAGS := -O0 -g -Wall
 CXXFLAGS := -m64 -std=c++11 $(FLAGS)
+PQCFLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror -lm
+PQCXX    := -m64 -std=c++11 -Weffc++ $(PQCFLAGS)
 
 
 
@@ -98,6 +100,33 @@ voidNode: voidNode.o
 
 voidNode.o: voidNode.cpp
 	$(PP) $(CXXFLAGS) -c voidNode.cpp
+	
+	
+	
+# voidNodeBad Example
+# Command: make voidNodeBad
+voidNodeBadObjs :=  voidNodeBad.o
+
+voidNodeBad: voidNodeBad.o
+	$(PP) $(CXXFLAGS) -o voidNodeBad $(voidNodeBadObjs)
+	./voidNodeBad
+
+voidNodeBad.o: voidNodeBad.cpp
+	$(PP) $(CXXFLAGS) -c voidNodeBad.cpp
+
+
+
+# voidNodeBad2 Example
+# Command: make voidNodeBad2
+voidNodeBad2Objs :=  voidNodeBad2.o
+
+voidNodeBad2: voidNodeBad2.o
+	$(PP) $(CXXFLAGS) -o voidNodeBad2 $(voidNodeBad2Objs)
+	./voidNodeBad2
+
+voidNodeBad2.o: voidNodeBad2.cpp
+	$(PP) $(CXXFLAGS) -c voidNodeBad2.cpp
+	
 
 
 # structNode Example
@@ -110,7 +139,20 @@ structNode: structNode.o
 
 structNode.o: structNode.cpp
 	$(PP) $(CXXFLAGS) -c structNode.cpp
+
+
+# structSimple Example
+# Command: make structSimple
+structSimpleObjs :=  structSimple.o
+
+structSimple: structSimple.o
+	$(PP) $(CXXFLAGS) -o structSimple $(structSimpleObjs)
+	./structSimple
+
+structSimple.o: structSimple.cpp
+	$(PP) $(CXXFLAGS) -c structSimple.cpp
 	
+
 	
 # structMod Example
 # Command: make structMod
@@ -147,10 +189,35 @@ classMod: classMod.o
 classMod.o: classMod.cpp
 	$(PP) $(CXXFLAGS) -c classMod.cpp
 	
+	
+# classBad Example
+# Command: make classBad
+classBadObjs :=  classBad.o
+
+classBad: classBad.o
+	$(PP) $(CXXFLAGS) -o classBad $(classBadObjs)
+	./classBad
+
+classBad.o: classBad.cpp
+	$(PP) $(CXXFLAGS) -c classBad.cpp
+	
+	
+	
+# classBadPQC Example
+# Command: make classBadPQC
+classBadPQCObjs :=  classBadPQC.o
+
+classBadPQC: classBadPQC.o
+	$(PP) $(PQCXX) -o classBadPQC $(classBadPQCObjs)
+	./classBadPQC
+
+classBadPQC.o: classBad.cpp
+	$(PP) $(PQCXX) -c classBad.cpp
+	
 
 # Make all
-all: namespace nameGood voidTypes voidTypes2 voidTypes3 voidNode structNode classNode classMod
+all: namespace nameGood voidTypes voidTypes2 voidTypes3 voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad
 
 # Make clean
 clean :
-	rm -rf *.o namespace nameGood nameGood2 voidTypes voidTypes2 voidTypes3 voidNode structNode structMod classNode classMod
+	rm -rf *.o namespace nameGood nameGood2 voidTypes voidTypes2 voidTypes3 voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad

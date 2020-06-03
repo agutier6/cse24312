@@ -30,9 +30,18 @@ class Node{
 		Node(double dblIn, float floatIn, int intIn ) 
 			: theDbl( dblIn ), theFloat( floatIn ), theInt( intIn ) {}
 		
+		
 		void setDbl( double dblIn ){
+			
 			theDbl = dblIn;
-		}	
+			
+		}
+		
+		int getInt(){
+			
+			return theInt;
+			
+		}
 			
 		void printNodeValues(){
 			
@@ -56,6 +65,8 @@ int main(void){
 	node1.setDbl(-34.77);
 	
 	node1.printNodeValues();
+	
+	COUT << ENDL << "Get Example: " << node1.getInt() << ENDL;
 	
 	return 0;
 	

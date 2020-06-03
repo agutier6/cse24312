@@ -18,7 +18,7 @@
 
 int main(void){
 	
-	void* numbers = malloc( sizeof(double) + sizeof(float) + sizeof(int) );
+	void* numbers = malloc( sizeof(double) );
 	void* reference = numbers;
 	
 	// Put a double in the first 64 bits after reference
@@ -27,7 +27,8 @@ int main(void){
 	// Printing the values. Set the reference back to numbers
 	reference = numbers;
 	
-	COUT << "Double:  " << *((double *)(reference)) << "\t at address " << reference << ENDL;
+	COUT << "Double:  " << *((double *)(reference)); 
+	COUT << "\t at address " << reference << ENDL;
 	
 	COUT << ENDL;
 	COUT << "Address of numbers  : " << numbers << ENDL;

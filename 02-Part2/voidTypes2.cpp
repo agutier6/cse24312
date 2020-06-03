@@ -11,13 +11,12 @@
 
 #include <iostream>
 #include <cstdlib>
-
 #define COUT std::cout
 #define ENDL std::endl
 
 int main(void){
 	
-	void* numbers = malloc( sizeof(double) + sizeof(float) + sizeof(int) );
+	void* numbers = malloc( sizeof(double) + sizeof(float) );
 	void* reference = numbers;
 	
 	// Put a double in the first 64 bits after reference
@@ -34,7 +33,6 @@ int main(void){
 	
 	reference += sizeof(double);
 	COUT << "Float:   " << *((float *)(reference)) << "\t at address " << reference << ENDL;
-	
 	
 	COUT << ENDL;
 	COUT << "Address of numbers  : " << numbers << ENDL;

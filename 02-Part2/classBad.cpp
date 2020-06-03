@@ -1,5 +1,5 @@
 /**********************************************
-* File: structNode.cpp
+* File: classNode.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
@@ -17,29 +17,29 @@
 #define COUT std::cout
 #define ENDL std::endl
 
-struct Node{
+class Node{
 	
-	/* Struct Members */
-	double theDbl;
-	float theFloat;
-	int theInt;
+	private:
+		double theDbl;
+		float theFloat;
+		int theInt;
 	
-	/* Constructor */
-	Node(double dblIn, float floatIn, int intIn ) 
-		: theDbl( dblIn ), theFloat( floatIn ), theInt( intIn ) {}
-		
+	public: 
 	
-	/* Struct methods */
-	void printNodeValues(){
-		
-		COUT << "-----------------------------" << ENDL;
-		COUT << "Initial address of 'this': " << this << ENDL << ENDL;	
+		Node(double dblIn, float floatIn, int intIn ) 
+			: theInt( intIn ), theFloat( floatIn ), theDbl( dblIn ) {}
+			
+			
+		void printNodeValues(){
+			
+			COUT << "-----------------------------" << ENDL;
+			COUT << "Initial address of 'this': " << this << ENDL << ENDL;	
 
-		COUT << "Double:  " << this->theDbl << "\t at address " << &(this->theDbl) << ENDL;
-		COUT << "Float:  " << this->theFloat << "\t at address " << &(this->theFloat) << ENDL;
-		COUT << "Integer:  " << this->theInt << "\t at address " << &(this->theInt) << ENDL;
-		
-	}
+			COUT << "Double:  " << theDbl << "\t at address " << &theDbl << ENDL;
+			COUT << "Float:  " << theFloat << "\t at address " << &theFloat << ENDL;
+			COUT << "Integer:  " << theInt << "\t at address " << &theInt << ENDL;
+			
+		}
 	
 };
 
