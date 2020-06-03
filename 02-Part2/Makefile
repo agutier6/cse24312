@@ -50,11 +50,107 @@ nameGood2.o: nameGood2.cpp
 
 
 
+# voidTypes Example
+# Command: make voidTypes
+voidTypesObjs :=  voidTypes.o
 
+voidTypes: voidTypes.o
+	$(PP) $(CXXFLAGS) -o voidTypes $(voidTypesObjs)
+	./voidTypes
+
+voidTypes.o: voidTypes.cpp
+	$(PP) $(CXXFLAGS) -c voidTypes.cpp
+
+
+# voidTypes2 Example
+# Command: make voidTypes2
+voidTypes2Objs :=  voidTypes2.o
+
+voidTypes2: voidTypes2.o
+	$(PP) $(CXXFLAGS) -o voidTypes2 $(voidTypes2Objs)
+	./voidTypes2
+
+voidTypes2.o: voidTypes2.cpp
+	$(PP) $(CXXFLAGS) -c voidTypes2.cpp
+
+
+
+# voidTypes3 Example
+# Command: make voidTypes3
+voidTypes3Objs :=  voidTypes3.o
+
+voidTypes3: voidTypes3.o
+	$(PP) $(CXXFLAGS) -o voidTypes3 $(voidTypes3Objs)
+	./voidTypes3
+
+voidTypes3.o: voidTypes3.cpp
+	$(PP) $(CXXFLAGS) -c voidTypes3.cpp
+	
+	
+
+# voidNode Example
+# Command: make voidNode
+voidNodeObjs :=  voidNode.o
+
+voidNode: voidNode.o
+	$(PP) $(CXXFLAGS) -o voidNode $(voidNodeObjs)
+	./voidNode
+
+voidNode.o: voidNode.cpp
+	$(PP) $(CXXFLAGS) -c voidNode.cpp
+
+
+# structNode Example
+# Command: make structNode
+structNodeObjs :=  structNode.o
+
+structNode: structNode.o
+	$(PP) $(CXXFLAGS) -o structNode $(structNodeObjs)
+	./structNode
+
+structNode.o: structNode.cpp
+	$(PP) $(CXXFLAGS) -c structNode.cpp
+	
+	
+# structMod Example
+# Command: make structMod
+structModObjs :=  structMod.o
+
+structMod: structMod.o
+	$(PP) $(CXXFLAGS) -o structMod $(structModObjs)
+	./structMod
+
+structMod.o: structMod.cpp
+	$(PP) $(CXXFLAGS) -c structMod.cpp
+
+
+# classNode Example
+# Command: make classNode
+classNodeObjs :=  classNode.o
+
+classNode: classNode.o
+	$(PP) $(CXXFLAGS) -o classNode $(classNodeObjs)
+	./classNode
+
+classNode.o: classNode.cpp
+	$(PP) $(CXXFLAGS) -c classNode.cpp
+	
+	
+# classMod Example
+# Command: make classMod
+classModObjs :=  classMod.o
+
+classMod: classMod.o
+	$(PP) $(CXXFLAGS) -o classMod $(classModObjs)
+	./classMod
+
+classMod.o: classMod.cpp
+	$(PP) $(CXXFLAGS) -c classMod.cpp
+	
 
 # Make all
-all: namespace nameGood
+all: namespace nameGood voidTypes voidTypes2 voidTypes3 voidNode structNode classNode classMod
 
 # Make clean
 clean :
-	rm -rf *.o namespace nameGood nameGood2
+	rm -rf *.o namespace nameGood nameGood2 voidTypes voidTypes2 voidTypes3 voidNode structNode structMod classNode classMod

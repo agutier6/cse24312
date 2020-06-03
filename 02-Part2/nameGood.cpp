@@ -6,7 +6,7 @@
 * An example of fixing the namespace conflict
 * in namespace.cpp
 *
-* Lecture 02 - Part 2 - Slide 10
+* Lecture 02 - Part 2 - Slide 11
 **********************************************/
 #include <iostream>
 
