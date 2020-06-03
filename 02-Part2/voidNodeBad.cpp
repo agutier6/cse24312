@@ -1,14 +1,20 @@
 /**********************************************
-* File: voidFunc.cpp
+* File: voidNodeBad.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
-* Example of allocating multiple version of data 
-* with different types of elements
+* Example of allocating different types using the
+* same void pointer. We store and print 
+* a double and a float and an int
 *
 * Shows void pointers as "Pass by reference"
 *
-* Lecture 02 - Part 2 - Slide 29
+* Prints the elements in the wrong order, so the
+* double, float, and int print the wrong values to
+* the screen even though the data is structured 
+* correctly on the heap.
+*
+* Lecture 02 - Part 2 - Slides 20-21
 **********************************************/
 
 #include <iostream>

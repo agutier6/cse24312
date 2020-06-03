@@ -1,14 +1,16 @@
 /**********************************************
-* File: voidFunc.cpp
+* File: voidNode.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
-* Example of allocating multiple version of data 
-* with different types of elements
+* Example of allocating different types using the
+* same void pointer. We store and print 
+* a double and a float and an int
 *
 * Shows void pointers as "Pass by reference"
+* and modularity
 *
-* Lecture 02 - Part 2 - Slide 29
+* Lecture 02 - Part 2 - Slide 20
 **********************************************/
 
 #include <iostream>

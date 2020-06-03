@@ -5,8 +5,10 @@
 * 
 * Taking the code from voidFunc and putting it into
 * a C++ struct. voidFunc is the same code, but at 
-* a lower level of abstraction. This level is closer
-* to object-oriented programming.
+* a lower level of abstraction. This code has data hiding
+* and object oriented programming
+*
+* Shows an example of a get/set function
 *
 * Lecture 02 - Part 2 - Slide 29
 **********************************************/

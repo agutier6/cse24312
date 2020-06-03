@@ -4,9 +4,10 @@
 * Email: matt.morrison@nd.edu
 * 
 * Example of allocating different types using the
-* same void pointer, printing a float and a double
+* same void pointer. We store and print 
+* a double and a float.
 *
-* Lecture 02 - Part 2 - Slide 29
+* Lecture 02 - Part 2 - Slides 16-18
 **********************************************/
 
 #include <iostream>

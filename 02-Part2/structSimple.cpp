@@ -6,9 +6,12 @@
 * Taking the code from voidFunc and putting it into
 * a C++ struct. voidFunc is the same code, but at 
 * a lower level of abstraction. This level is closer
-* to object-oriented programming.
+* to object-oriented programming, but does not 
+* implement any data hiding.
 *
-* Lecture 02 - Part 2 - Slide 29
+* Also, shows how "this" can be abstracted away
+*
+* Lecture 02 - Part 2 - Slides 29-30
 **********************************************/
 
 #include <iostream>

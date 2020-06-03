@@ -1,5 +1,5 @@
 /**********************************************
-* File: voidFunc.cpp
+* File: voidNodeBad2.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 
@@ -8,7 +8,11 @@
 *
 * Shows void pointers as "Pass by reference"
 *
-* Lecture 02 - Part 2 - Slide 29
+* This code will run correctly. However, the setNodeValues 
+* is out of order, which makes the pointer arithmetic 
+* more complex, reducing the efficiency of the code 
+*
+* Lecture 02 - Part 2 - Slide 21
 **********************************************/
 
 #include <iostream>

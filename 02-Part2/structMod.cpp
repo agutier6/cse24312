@@ -8,6 +8,9 @@
 * a lower level of abstraction. This level is closer
 * to object-oriented programming.
 *
+* Shows how the public nature of structs allows for 
+* ease of modification of the struct members
+*
 * Lecture 02 - Part 2 - Slide 29
 **********************************************/
 
