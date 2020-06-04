@@ -27,7 +27,7 @@ int main(void){
 	
 	std::cout << (void *)hello << std::endl;
 	
-	delete hello;
+	free( hello );
 
 	return 0;
 }

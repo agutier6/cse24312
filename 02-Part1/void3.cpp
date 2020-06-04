@@ -31,8 +31,8 @@ int main(void){
 	reference = reference + sizeof(char);
 	*((char *)(reference)) = 101;
 	
-	std::cout << &hello << " " << hello << " " << *((char *)(hello)) <<std::endl;
-	std::cout << &reference << " " << reference << " " << *((char *)(reference)) << std::endl;
+	std::cout << &hello << " " << hello << " " << *((char *)(hello + 1)) <<std::endl;
+	std::cout << &reference << " " << reference << " " << *((char *)(reference - 2)) << std::endl;
 	
 	free( hello );
 
