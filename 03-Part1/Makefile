@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for Lecture 02 - Part 2
+# This is the Makefile for Lecture 03 - Part 1
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -11,82 +11,6 @@ FLAGS := -O0 -g -Wall
 CXXFLAGS := -m64 -std=c++11 $(FLAGS)
 PQCFLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror -lm
 PQCXX    := -m64 -std=c++11 -Weffc++ $(PQCFLAGS)
-
-
-
-# namespace Example
-# Command: make namespace
-namespaceObjs :=  namespace.o
-
-namespace: namespace.o
-	$(PP) $(CXXFLAGS) -o namespace $(namespaceObjs)
-	./namespace
-
-namespace.o: namespace.cpp
-	$(PP) $(CXXFLAGS) -c namespace.cpp
-	
-	
-	
-# nameGood Example
-# Command: make nameGood
-nameGoodObjs :=  nameGood.o
-
-nameGood: nameGood.o
-	$(PP) $(CXXFLAGS) -o nameGood $(nameGoodObjs)
-	./nameGood
-
-nameGood.o: nameGood.cpp
-	$(PP) $(CXXFLAGS) -c nameGood.cpp
-
-
-# nameGood2 Example
-# Command: make nameGood2
-nameGood2Objs :=  nameGood2.o
-
-nameGood2: nameGood2.o
-	$(PP) $(CXXFLAGS) -o nameGood2 $(nameGood2Objs)
-	./nameGood2
-
-nameGood2.o: nameGood2.cpp
-	$(PP) $(CXXFLAGS) -c nameGood2.cpp
-
-
-
-# voidTypes Example
-# Command: make voidTypes
-voidTypesObjs :=  voidTypes.o
-
-voidTypes: voidTypes.o
-	$(PP) $(CXXFLAGS) -o voidTypes $(voidTypesObjs)
-	./voidTypes
-
-voidTypes.o: voidTypes.cpp
-	$(PP) $(CXXFLAGS) -c voidTypes.cpp
-
-
-# voidTypes2 Example
-# Command: make voidTypes2
-voidTypes2Objs :=  voidTypes2.o
-
-voidTypes2: voidTypes2.o
-	$(PP) $(CXXFLAGS) -o voidTypes2 $(voidTypes2Objs)
-	./voidTypes2
-
-voidTypes2.o: voidTypes2.cpp
-	$(PP) $(CXXFLAGS) -c voidTypes2.cpp
-
-
-
-# voidTypes3 Example
-# Command: make voidTypes3
-voidTypes3Objs :=  voidTypes3.o
-
-voidTypes3: voidTypes3.o
-	$(PP) $(CXXFLAGS) -o voidTypes3 $(voidTypes3Objs)
-	./voidTypes3
-
-voidTypes3.o: voidTypes3.cpp
-	$(PP) $(CXXFLAGS) -c voidTypes3.cpp
 	
 	
 
@@ -214,10 +138,62 @@ classBadPQC: classBadPQC.o
 classBadPQC.o: classBad.cpp
 	$(PP) $(PQCXX) -c classBad.cpp
 	
+	
+
+# const Example
+# Command: make const
+constObjs :=  const.o
+
+const: const.o
+	$(PP) $(PQCXX) -o const $(constObjs)
+	./const
+
+const.o: const.cpp
+	$(PP) $(PQCXX) -c const.cpp
+	
+	
+	
+# funcOver Example
+# Command: make funcOver
+funcOverObjs :=  funcOver.o
+
+funcOver: funcOver.o
+	$(PP) $(PQCXX) -o funcOver $(funcOverObjs)
+	./funcOver
+
+funcOver.o: funcOver.cpp
+	$(PP) $(PQCXX) -c funcOver.cpp
+	
+	
+	
+# ambig Example
+# Command: make ambig
+ambigObjs :=  ambig.o
+
+ambig: ambig.o
+	$(PP) $(PQCXX) -o ambig $(ambigObjs)
+	./ambig
+
+ambig.o: ambig.cpp
+	$(PP) $(PQCXX) -c ambig.cpp
+
+
+
+# template Example
+# Command: make template
+templateObjs :=  template.o
+
+template: template.o
+	$(PP) $(PQCXX) -o template $(templateObjs)
+	./template
+
+template.o: template.cpp
+	$(PP) $(PQCXX) -c template.cpp
+	
 
 # Make all
-all: namespace nameGood voidTypes voidTypes2 voidTypes3 voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad
+all: voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad const funcOver template
 
 # Make clean
 clean :
-	rm -rf *.o namespace nameGood nameGood2 voidTypes voidTypes2 voidTypes3 voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad
+	rm -rf *.o voidNode voidNodeBad voidNodeBad2 structNode structSimple structMod classNode classMod classBad const funcOver template
