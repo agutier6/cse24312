@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-typedef float COORDINATE;
+typedef double COORDINATE;
 
 
 class point{

@@ -10,6 +10,25 @@
 #include "factorial.h"
 
 /********************************************
+* Function Name  : printResult
+* Pre-conditions : T input, U result
+* Post-conditions: void
+* 
+* Will print the format input! = result 
+* If result is -1, will not print anything 
+********************************************/
+
+template< class T, class U >
+void printResult( T input, U result ){
+	
+	if(result != (U)-1){
+		COUT << input << "! = " << result << "\n";
+	}
+	
+}
+
+
+/********************************************
 * Function Name  : main
 * Pre-conditions : void
 * Post-conditions: int
@@ -18,31 +37,22 @@
 ********************************************/
 int main(void){
 	
-	/* Declare variables */
-	int resultInt;
-	float resultFloat;
-	double resultDouble;
+	/* Check int max */
+	printResult( MAX_INT_FACT, factInt(MAX_INT_FACT) );
 	
-	resultInt = factInt(MAX_INT_FACT);
-	if(resultInt != -1){
-		std::cout << MAX_INT_FACT << "! = " << resultInt << "\n";
-	}
+	printResult( MAX_INT_FACT + 1, factInt(MAX_INT_FACT + 1) );
 	
-	resultInt = factInt(MAX_INT_FACT + 1);
 	
-	resultFloat = factFloat(MAX_FLOAT_FACT);
-	if(resultFloat != -1){
-		std::cout << MAX_FLOAT_FACT << "! = " << resultFloat << "\n";
-	}
+	/* Check float max */
+	printResult( MAX_FLOAT_FACT, factFloat(MAX_FLOAT_FACT) );
 	
-	resultFloat = factFloat(MAX_FLOAT_FACT + 1);
+	printResult( MAX_FLOAT_FACT + 1, factFloat(MAX_FLOAT_FACT + 1) );
+
+
+	/* Check double max */
+	printResult( MAX_DOUBLE_FACT, factDouble(MAX_DOUBLE_FACT) );
 	
-	resultDouble = factDouble(MAX_DOUBLE_FACT);
-	if(resultDouble != -1){
-		std::cout << MAX_DOUBLE_FACT << "! = " << resultDouble << "\n";
-	}
-	
-	resultDouble = factDouble(MAX_DOUBLE_FACT + 1);
+	printResult( MAX_DOUBLE_FACT + 1, factDouble(MAX_DOUBLE_FACT + 1) );
 	
 
 	return 0;

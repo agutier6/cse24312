@@ -12,6 +12,9 @@
 
 #include <iostream>
 
+#define COUT std::cout
+#define ENDL std::endl
+
 /* Compiler Directives */
 const int MIN_FACT = 0;
 const int MAX_INT_FACT = 12;

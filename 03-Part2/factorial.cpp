@@ -21,7 +21,7 @@ int factInt(int num){
 	
 	/* Error Checking */
 	if(num < MIN_FACT || num > MAX_INT_FACT){
-		std::cout << num << " is invalid for integers\n";
+		COUT << num << " is invalid for integers\n";
 		return -1;
 	}
 	
@@ -47,7 +47,7 @@ float factFloat(int num){
 	
 	/* Error Checking */
 	if(num < MIN_FACT || num > MAX_FLOAT_FACT){
-		std::cout << num << " is invalid for floats\n";
+		COUT << num << " is invalid for floats\n";
 		return -1;
 	}
 	
@@ -73,7 +73,7 @@ double factDouble(int num){
 	
 	/* Error Checking */
 	if(num < MIN_FACT || num > MAX_DOUBLE_FACT){
-		std::cout << num << " is invalid for doubles\n";
+		COUT << num << " is invalid for doubles\n";
 		return -1;
 	}
 	
