@@ -14,7 +14,6 @@
 
 typedef double COORDINATE;
 
-
 class point{
 	
 	private:
