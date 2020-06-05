@@ -45,7 +45,8 @@ fact_03.o: fact_03.cpp fact_03.h
 	
 # factHeaderEx Example
 # Command: make factHeaderEx 
-factHeaderExObjs :=  factHeaderEx.o factorial.o
+
+factHeaderExObjs := factorial.o factHeaderEx.o
 
 factHeaderEx: $(factHeaderExObjs)
 	$(PP) $(CXXFLAGS) -o factHeaderEx $(factHeaderExObjs)

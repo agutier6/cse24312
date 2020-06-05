@@ -28,8 +28,7 @@ struct Node{
 	int theInt;
 	
 	/* Constructor */
-	Node(double dblIn, float floatIn, int intIn ) 
-		: theDbl( dblIn ), theFloat( floatIn ), theInt( intIn ) {}
+	Node(double dblIn, float floatIn, int intIn ) : theDbl( dblIn ), theFloat( floatIn ), theInt( intIn ) {}
 		
 	
 	/* Struct methods */

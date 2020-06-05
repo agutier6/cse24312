@@ -1,5 +1,5 @@
 /**********************************************
-* File: structNode.cpp
+* File: structSimple.cpp
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 * 

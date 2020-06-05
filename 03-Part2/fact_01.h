@@ -10,8 +10,8 @@
 * Lecture 03 - Part 2 - Slide 4
 **********************************************/
 
-#ifndef FACTORIAL_H
-#define FACTORIAL_H
+#ifndef FACT01_H
+#define FACT01_H
 
 
 

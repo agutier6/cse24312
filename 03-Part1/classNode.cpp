@@ -49,6 +49,7 @@ int main(void){
 	Node node2( -34.77, 44.96, 1842 );
 	
 	COUT << "Node 1 is at address " << &node1 << ENDL;
+	
 	node1.printNodeValues();
 	COUT << ENDL;
 	

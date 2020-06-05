@@ -27,7 +27,7 @@ const int MAX_DOUBLE_FACT = 170;
 * Pre-conditions : int num
 * Post-conditions: int
 * 
-* Takes in an int between 0 and 13, and returns the 
+* Takes in an int between 0 and 12, and returns the 
 * factorial value. Returns -1 if those values are exceeded 
 ********************************************/
 int factInt(int num);
