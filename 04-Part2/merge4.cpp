@@ -82,7 +82,6 @@ void merge(int* array, int min, int max){
 		while( start1 <= (min + max) / 2 ){
 			
 				arrayTemp[arrayIter] = array[start1];
-				std::cout << "Inserting 1 " << array[start1] << ENDL;
 				start1++; arrayIter++;
 				
 		}
@@ -90,7 +89,6 @@ void merge(int* array, int min, int max){
 		while( start2 <= max ){
 			
 				arrayTemp[arrayIter] = array[start2];
-				std::cout << "Inserting 2 " << array[start2] << ENDL;
 				start2++; arrayIter++;
 				
 		}
