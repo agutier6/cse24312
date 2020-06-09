@@ -33,12 +33,20 @@ int main(void){
 	Notre[0] = 'N'; Notre[1] = 'o'; Notre[2] = 't'; Notre[3] = 'r'; Notre[4] = 'e'; 
 	
 	int currLetter = -1;	
-	char findChar = 't';
+	char findChar = 'q';
 
 	// Get the location of the letter
 	getLetter(Notre, wordSize, findChar, &currLetter);
 	
-	std::cout << "The current letter " << findChar << " was at Notre[" << currLetter << "]\n";
+	if( currLetter != -1 ){
+	
+		std::cout << "The current letter " << findChar << " was at Notre[" << currLetter << "]\n";
+	
+	}
+	else{
+		
+		std::cout << findChar << " not in " << Notre << std::endl;
+	}
 	
 	free(Notre);
 

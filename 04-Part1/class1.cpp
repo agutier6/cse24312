@@ -20,7 +20,7 @@ int main(){
 	point point1;
 	
 	/* Constructor with input values */
-	point point2( 2.2, 3.7 );
+	const point point2( 2.2, 3.7 );
 	
 	/* Print both points */
 	std::cout << "Point1: " << point1.getX() << ", " << point1.getY() << std::endl;

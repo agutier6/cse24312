@@ -27,7 +27,7 @@ double getArgv1Num(int argc, char** argv){
 
 	//give the value to factNum using the characters in the string
 	if ( !(convert >> factNum) ){
-		std::cout << "Not a valid integer" << std::endl;
+		std::cout << "Not a valid double" << std::endl;
 		exit(-1);
 	}
 	

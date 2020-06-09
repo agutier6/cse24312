@@ -27,9 +27,9 @@ class point{
 		
 		point(COORDINATE inX, COORDINATE inY);
 		
-		COORDINATE getX() const;
+		COORDINATE getX() const ;
 		
-		COORDINATE getY() const;
+		COORDINATE getY() const ;
 		
 		void setX(COORDINATE inX);
 		

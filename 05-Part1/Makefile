@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20312 course Lecture 04 - Part 2
+# This is the Makefile for the CSE 20312 course Lecture 05 - Part 1
 # 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -9,41 +9,6 @@ PP := g++
 # CFLAGS are the compiler flages for when we compile C code in this course 
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror -lm
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
-	
-
-# Exponential using recursion
-# Command: make exp1
-exp1Objs := exp1.o
-
-exp1: $(exp1Objs)
-	$(PP) $(CXXFLAGS) -o exp1 $(exp1Objs)
-	./exp1
-
-exp1.o: exp1.cpp
-	$(PP) $(CXXFLAGS) -c exp1.cpp
-
-
-
-# Exponential using recursion
-# Command: make exp2
-exp2Objs := exp2.o
-
-exp2: $(exp2Objs)
-	$(PP) $(CXXFLAGS) -o exp2 $(exp2Objs)
-
-exp2.o: exp2.cpp
-	$(PP) $(CXXFLAGS) -c exp2.cpp	
-	
-	
-# Exponential using recursion
-# Command: make exp
-expObjs := exp.o
-
-exp: $(expObjs)
-	$(PP) $(CXXFLAGS) -o exp $(expObjs)
-
-exp.o: exp.cpp
-	$(PP) $(CXXFLAGS) -c exp.cpp
 	
 	
 	

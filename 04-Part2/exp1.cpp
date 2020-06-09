@@ -33,7 +33,7 @@ double exponential(double x, int k){
 	double returnVal = (pow(x,k)/factorial(k)) + exponential(x,k-1);
 	
 	std::cout << x << " " << k << " " 
-		<< std::setprecision(12) << returnVal << std::endl;
+		<< std::setprecision(6) << returnVal << std::endl;
 
 	return returnVal;
   
@@ -44,7 +44,7 @@ int main(){
 	
 	double expVal = exponential(4, 30);
 	
-	std::cout << "Final Result: " << std::setprecision(12) << expVal << std::endl;
+	std::cout << "Final Result: " << std::setprecision(6) << expVal << std::endl;
 	
 	return 0;
 }
