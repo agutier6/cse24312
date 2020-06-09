@@ -88,8 +88,8 @@ merge.o: merge.cpp
 	
 
 # Make all
-all: exp1 exp2 exp fib merge1 merge2 merge3 merge4
+all: exp1 exp2 exp fib merge1 merge2 merge3 merge4 merge
 
 # Make clean
 clean :
-	rm -rf *.o exp1 exp2 exp fib merge1 merge2 merge3 merge4
+	rm -rf *.o exp1 exp2 exp fib merge1 merge2 merge3 merge4 merge
