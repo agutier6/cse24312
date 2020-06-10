@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 20312 course Lecture 10
+# This is the Makefile for the CSE 24312 course Lecture 05 - Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -11,11 +11,10 @@ FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS) 
 
 
-10 := ~/cse20312/10-Templates
-CLASSES := $(10)/classes
-PROG := $(10)/programs
-OBJECTS := $(10)/objects
-EXE := $(10)/executables
+CLASSES := classes
+PROG := programs
+OBJECTS := objects
+EXE := executables
 
 
 tempTestObjs := $(OBJECTS)/tempTest.o
@@ -29,10 +28,6 @@ $(OBJECTS)/tempTest.o: $(PROG)/tempTest.cpp $(CLASSES)/A.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/tempTest.cpp -o $@
 
 
-
-
-	
-	
 	
 
 # Command: make classBad
