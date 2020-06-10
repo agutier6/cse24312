@@ -20,7 +20,6 @@ class A{
 		
 		/* Destructor */
 		~A(){
-			
 			// No pointers, so leave empty
 		}
 		

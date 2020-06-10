@@ -1,30 +1,30 @@
 #include "Abad.h"
 
 template<class T, class U>
-A::A(T inX, U inY) : x(inX), y(inY) {}
+A<T, U>::A(T inX, U inY) : x(inX), y(inY) {}
 
 template<class T, class U>
-T A::getX() const{
+T A<T, U>::getX() const{
 	return x;
 }
 
 template<class T, class U>
-U A::getY() const{
+U A<T, U>::getY() const{
 	return y;
 }
 
 template<class T, class U>
-void A::setX(T inX){
+void A<T, U>::setX(T inX){
 	x = inX;
 }
 
 template<class T, class U>
-void A::setY(U inY){
+void A<T, U>::setY(U inY){
 	y = inY;
 }
 
 template<class T, class U>
-bool A::operator==(const A& rhs) const{
+bool A<T, U>::operator==(const A<T, U>& rhs) const{
 	if(x == rhs.x && y == rhs.y)
 		return true;
 	return false;

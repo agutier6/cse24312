@@ -11,7 +11,7 @@ class A  {
 		U y; 
 
 	public: 
-		A(T inX, U inY) : x(inX), y(inY) {}
+		A(T inX, U inY);
 		
 		T getX() const;
 		
@@ -27,7 +27,6 @@ class A  {
 			output << in.x << " " << in.y;
 			return output;
 		}
-
 	
 }; 
 
