@@ -10,7 +10,7 @@ int main()  {
 	
 	const A<char, char> a('G', 72); 
    
-	A<char, char> b(71, 'H'); 
+	A<int, char> b(71, 'H'); 
    
 	/* Construct pointer to class A<int, float> */
 	A<int, float>* c = new A<int, float>(10, (float)-35.7); 
