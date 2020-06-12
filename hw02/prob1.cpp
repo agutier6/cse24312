@@ -68,10 +68,10 @@ int main(void){
 	void* node2 = malloc( nodeSize + 12*sizeof(char));
 	
 	// Set the node Values for node1 
-	setNodeValues( node1, -0.625, 1.5625, char1, length1 );
+	setNodeValues( node1, 10, 1.5625, char1, length1 );
 	
 	// Set the node Values for node2 
-	setNodeValues( node2, -34.77, 44.96, char2, length2 );
+	setNodeValues( node2, -25, 44.96, char2, length2 );
 	
 	// Printing the values. Set the reference back to numbers
 	printNodeValues( node1 );
