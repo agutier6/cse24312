@@ -66,7 +66,7 @@ DynArrTestObjs := $(OBJECTS)/DynArrTest.o
 
 DynArrTest: $(DynArrTestObjs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/DynArrTest $(DynArrTestObjs)
-	$(EXE)/./DynArrTest6
+	$(EXE)/./DynArrTest
 
 $(OBJECTS)/DynArrTest.o: $(PROG)/DynArrTest.cpp $(CLASSES)/DynArr.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/DynArrTest.cpp -o $@

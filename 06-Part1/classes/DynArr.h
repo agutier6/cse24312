@@ -96,7 +96,14 @@ class DynArr{
 				
 				if(size >= capac){
 					
-					capac = capac * 2;
+					if( size == 0 ){
+						
+						capac = 1;
+					}
+					
+					else{
+						capac = capac * 2;
+					}
 					
 					T* tmp = new T[capac];
 					

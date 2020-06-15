@@ -29,7 +29,7 @@ int main()  {
    
    /* Calling assignment operator, with c de-referenced */
    A<int, float> d = *c;
-   A<char, char> e = a;
+   A<char, char> e(a);
    
    std::cout << "d: " << d << std::endl; 
    std::cout << "e: " << e << std::endl; 

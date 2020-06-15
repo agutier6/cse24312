@@ -129,7 +129,6 @@ $(OBJECTS)/DynArrTest.o: $(PROG)/DynArrTest.cpp $(CLASSES)/DynArr.h
 
 # make initialize
 # Will be called by grader to initialize your objects and executables folders
-
 initialize: 
 	mkdir objects executables
 

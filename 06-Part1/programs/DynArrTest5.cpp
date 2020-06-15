@@ -8,7 +8,7 @@ const int LENGTH = 10;
 #define ENDL std::endl;
 
 template<class T>
-void printData( DynArr<T> theArr ){
+void printData( DynArr<T>& theArr ){
 	
 	// Print initial size and capacity of floatArr
 	COUT << "Initial: ";

@@ -27,7 +27,12 @@ class DynArr{
 				size(sizeIn),
 				capac(sizeIn),
 				data(new T[capac]) {}
+
+			~DynArr(){
 				
+				delete [] data;
+				
+			}				
 			
 			// Copy Constructor
 			DynArr(const DynArr<T>& C) : 
