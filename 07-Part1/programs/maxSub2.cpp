@@ -35,6 +35,7 @@ int maxSubArrayBrute( DynArr<int>& theArray ) {
 			maxSize = sum;
 		}
 		
+		// Modified from maxSub1.cpp - Adding the sub array iteration
 		for(unsigned int jter = iter + 1; jter < theArray.length(); jter++){
 			
 			sum += theArray[jter];

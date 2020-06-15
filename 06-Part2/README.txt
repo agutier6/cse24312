@@ -84,3 +84,53 @@ Files: programs/Product.cpp
 Slides: 29-30
 
 Modified Product3.cpp by the reverse iteration of the “Product of Array Except Self” problem in the solveArray function.
+
+-------------------------------------------------
+
+Command 9 - make maxSub1
+
+Files: programs/maxSub1.cpp
+
+Slides: 32-33
+
+Initial step in a Brute Force approach to the "Maximum Subarray" problem. Simply finds the largest element in the array
+
+-------------------------------------------------
+
+Command 9 - make maxSub2
+
+Files: programs/maxSub2.cpp
+
+Slides: 34-36
+
+Modified maxSub1.cpp by adding an iteration in maxSubArrayBrute to calculate the maximum array in O(n^2) time.
+
+-------------------------------------------------
+
+Command 10 - make maxSub3
+
+Files: programs/maxSub3.cpp
+
+Slides: 39-42
+
+Performs a Dynamic Programming Approach to maxSub. In this program, only the intermediate values are calculated to get the best subarray value at each location. Function maxSubArrayDyn is where the changes occur.
+
+-------------------------------------------------
+
+Command 11 - make maxSub4
+
+Files: programs/maxSub4.cpp
+
+Slides: 43-44
+
+Modified maxSub3.cpp by calculating the global maximum value in maxSubArrayDyn
+
+-------------------------------------------------
+
+Command 12 - make maxSub
+
+Files: programs/maxSub.cpp
+
+Slides: 45-46
+
+Modified maxSub4.cpp by changing the if statements in maxSubArrayDyn to ternary conditionals and removing intermediate print statements.

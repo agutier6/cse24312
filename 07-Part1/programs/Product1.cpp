@@ -38,7 +38,6 @@ int main(){
 	COUT << ENDL;
 	
 	// Create second array
-	
 	DynArr<int> array2( numVals - 1 );
 	
 	array2[0] = 1; 	array2[1] = 2;

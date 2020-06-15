@@ -24,10 +24,11 @@ void printArray( DynArr<int>& theArray ){
 
 DynArr<int> solveArray( DynArr<int>& theArray ){
 	
+	// Create an array to store the solution
 	DynArr<int> solution( theArray.length() );
 	
+	// Forward Iteration
 	solution[ 0 ] = 1;
-	
 	for(unsigned int iter = 1; iter < theArray.length(); iter++){
 		
 		solution[ iter ] = solution[ iter - 1 ] * theArray[ iter - 1 ];
@@ -40,10 +41,12 @@ DynArr<int> solveArray( DynArr<int>& theArray ){
 
 void runSolution( DynArr<int>& theArray ) {
 	
+	// Print the Initial Input
 	COUT << "Input : ";
 	printArray( theArray );
 	COUT << "\n";
 
+	// Run the Solution and Print the Output
 	COUT << "Output: ";
 	DynArr<int> solution = solveArray( theArray );
 	printArray( solution );

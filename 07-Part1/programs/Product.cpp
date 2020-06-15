@@ -24,18 +24,19 @@ void printArray( DynArr<int>& theArray ){
 
 
 DynArr<int> solveArray( DynArr<int>& theArray ){
-	
+
+	// Create an array to store the solution
 	DynArr<int> solution( theArray.length() );
 	
-	
+	// Forward Iteration
 	solution[ 0 ] = 1;
-	
 	for(unsigned int iter = 1; iter < theArray.length(); iter++){
 		
 		solution[ iter ] = solution[ iter - 1 ] * theArray[ iter - 1 ];
 	
 	}
 	
+	// Create a reverse value for the multiplication
 	int tempBackward = 1;
 	for(unsigned int iter = theArray.length() - 1; iter > 0; iter--){
 		
