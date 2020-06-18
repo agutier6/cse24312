@@ -166,7 +166,30 @@ maxSub: $(maxSubObjs)
 
 $(OBJECTS)/maxSub.o: $(PROG)/maxSub.cpp $(CLASSES)/DynArr.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/maxSub.cpp -o $@
-	
+
+
+
+# Command: make maxProd1
+maxProd1Objs := $(OBJECTS)/maxProd1.o
+
+maxProd1: $(maxProd1Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/maxProd1 $(maxProd1Objs)
+	$(EXE)/./maxProd1
+
+$(OBJECTS)/maxProd1.o: $(PROG)/maxProd1.cpp $(CLASSES)/DynArr.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/maxProd1.cpp -o $@
+
+
+
+# Command: make maxProd
+maxProdObjs := $(OBJECTS)/maxProd.o
+
+maxProd: $(maxProdObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/maxProd $(maxProdObjs)
+	$(EXE)/./maxProd
+
+$(OBJECTS)/maxProd.o: $(PROG)/maxProd.cpp $(CLASSES)/DynArr.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/maxProd.cpp -o $@
 	
 
 # make initialize

@@ -38,10 +38,10 @@ int main(){
 	COUT << ENDL;
 	
 	// Create second array
-	DynArr<int> array2( numVals - 1 );
+	DynArr<int> array2;
 	
-	array2[0] = 1; 	array2[1] = 2;
-	array2[2] = 3; 	array2[3] = 4;
+	array2.push_back(1); 	array2.push_back(2);
+	array2.push_back(3); 	array2.push_back(4);
 	
 	printArray(array2);
 	COUT << ENDL;
