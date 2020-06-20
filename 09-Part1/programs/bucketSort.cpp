@@ -10,13 +10,6 @@
 #include <iostream>
 #include "../classes/SorDynArr.h"
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : none
-* Post-conditions: int
-* 
-* This is the main driver function 
-********************************************/
 int main(){
 
 	long unsigned int numBuckets = 10;
@@ -32,7 +25,6 @@ int main(){
 	for(int iter = 0; iter < 10; iter++){
 		
 		int bucket = initialVals[iter] / 10;
-		
 		buckets[ bucket ].Insert( initialVals[iter] );
 		
 	}

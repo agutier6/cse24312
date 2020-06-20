@@ -22,7 +22,6 @@ class SorDynArr : public DynArr<T>{
 		void Insert(const T& value){
 			
 			if( this->size == 0 ){
-				
 				this->capac = 1;
 			}
 			

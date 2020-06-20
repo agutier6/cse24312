@@ -10,7 +10,7 @@ class HashTable{
 	private:
 		std::vector<Value> array;	// Private Dynamic Array for Hash Table 
 		
-	public:
+	public:	
 	
 		// Constructor
 		HashTable(const unsigned int size = 0) : array( size ) {}

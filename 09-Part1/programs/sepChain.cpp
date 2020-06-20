@@ -86,12 +86,9 @@ int main(){
 	}
 	
 	/* Insert 4, 13, 8, 10, 5, 15 */
-	insertVal(sepChain, 4);
-	insertVal(sepChain, 13);
-	insertVal(sepChain, 8);
-	insertVal(sepChain, 10);
-	insertVal(sepChain, 5);
-	insertVal(sepChain, 15);
+	insertVal(sepChain, 4);		insertVal(sepChain, 13);
+	insertVal(sepChain, 8);		insertVal(sepChain, 10);
+	insertVal(sepChain, 5);		insertVal(sepChain, 15);
 
 	/* Print the Hash */
 	std::cout << sepChain << std::endl << std::endl;

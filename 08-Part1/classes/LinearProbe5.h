@@ -95,7 +95,7 @@ class HashTable{
 			}
 			while(
 				array.at( currentPos ).state != EMPTY
-				&& array.at( currentPos ).key != insertPair.first
+				&& array[ currentPos ].key != insertPair.first
 				&& iter < array.capacity()
 			);
 			
@@ -146,6 +146,8 @@ class HashTable{
 			for(unsigned int iter = 0; iter < theTable.array.size(); iter++){
 				
 				output << "{" << iter << ": ";
+				
+				output << theTable.array[iter].state << ", ";
 				
 				output << theTable.array[iter].key << ", ";
 				
