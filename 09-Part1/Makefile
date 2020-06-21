@@ -1,148 +1,147 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 24312 - Lecture 09 - Part 1
+# This is the Makefile for the CSE 24312 course Lecture 07 - Part 1
 
 # G++ is for the GCC compiler for C++
 PP := g++
 
 # CXXFLAGS are the compiler flages for when we compile C++ code in this course 
 FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror 
-CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS)
+CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS) 
 
-# Variables for Folders
+
 CLASSES := classes
 PROG := programs
 OBJECTS := objects
 EXE := executables
 
 
-# Command: make countSort1
-countSort1Objs := $(OBJECTS)/countSort1.o
+# Command: make switch
+switchObjs := $(OBJECTS)/switch.o
 
-countSort1: $(countSort1Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSort1 $(countSort1Objs)
-	$(EXE)/./countSort1
+switch: $(switchObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/switch $(switchObjs)
+	$(EXE)/./switch
 
-$(OBJECTS)/countSort1.o: $(PROG)/countSort1.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSort1.cpp -o $@
+$(OBJECTS)/switch.o: $(PROG)/switch.cpp
+	$(PP) $(CXXFLAGS) -c $(PROG)/switch.cpp -o $@
 
 
 
-# Command: make countSort2
-countSort2Objs := $(OBJECTS)/countSort2.o
+# Command: make LPTest1
+LPTest1Objs := $(OBJECTS)/LPTest1.o
 
-countSort2: $(countSort2Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSort2 $(countSort2Objs)
-	$(EXE)/./countSort2
+LPTest1: $(LPTest1Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest1 $(LPTest1Objs)
+	$(EXE)/./LPTest1
 
-$(OBJECTS)/countSort2.o: $(PROG)/countSort2.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSort2.cpp -o $@
+$(OBJECTS)/LPTest1.o: $(PROG)/LPTest1.cpp $(CLASSES)/LinearProbe1.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest1.cpp -o $@
+
+
+
+# Command: make LPTest2
+LPTest2Objs := $(OBJECTS)/LPTest2.o
+
+LPTest2: $(LPTest2Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest2 $(LPTest2Objs)
+	$(EXE)/./LPTest2
+
+$(OBJECTS)/LPTest2.o: $(PROG)/LPTest2.cpp $(CLASSES)/LinearProbe2.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest2.cpp -o $@
+
+
+
+# Command: make LPTest3
+LPTest3Objs := $(OBJECTS)/LPTest3.o
+
+LPTest3: $(LPTest3Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest3 $(LPTest3Objs)
+	$(EXE)/./LPTest3
+
+$(OBJECTS)/LPTest3.o: $(PROG)/LPTest3.cpp $(CLASSES)/LinearProbe3.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest3.cpp -o $@
+
+
+
+# Command: make LPTest4
+LPTest4Objs := $(OBJECTS)/LPTest4.o
+
+LPTest4: $(LPTest4Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest4 $(LPTest4Objs)
+	$(EXE)/./LPTest4
+
+$(OBJECTS)/LPTest4.o: $(PROG)/LPTest4.cpp $(CLASSES)/LinearProbe4.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest4.cpp -o $@
+
+
+# Command: make LPTest5
+LPTest5Objs := $(OBJECTS)/LPTest5.o
+
+LPTest5: $(LPTest5Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest5 $(LPTest5Objs)
+	$(EXE)/./LPTest5
+
+$(OBJECTS)/LPTest5.o: $(PROG)/LPTest5.cpp $(CLASSES)/LinearProbe5.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest5.cpp -o $@
+
+
+# Command: make LPTest6
+LPTest6Objs := $(OBJECTS)/LPTest6.o
+
+LPTest6: $(LPTest6Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest6 $(LPTest6Objs)
+	$(EXE)/./LPTest6
+
+$(OBJECTS)/LPTest6.o: $(PROG)/LPTest6.cpp $(CLASSES)/LinearProbe6.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest6.cpp -o $@
+
+
+# Command: make LPTest7
+LPTest7Objs := $(OBJECTS)/LPTest7.o
+
+LPTest7: $(LPTest7Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest7 $(LPTest7Objs)
+	$(EXE)/./LPTest7
+
+$(OBJECTS)/LPTest7.o: $(PROG)/LPTest7.cpp $(CLASSES)/LinearProbe7.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest7.cpp -o $@
+
+
+# Command: make LPTest8
+LPTest8Objs := $(OBJECTS)/LPTest8.o
+
+LPTest8: $(LPTest8Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest8 $(LPTest8Objs)
+	$(EXE)/./LPTest8
+
+$(OBJECTS)/LPTest8.o: $(PROG)/LPTest8.cpp $(CLASSES)/LinearProbe.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest8.cpp -o $@
 	
 
-# Command: make countSort3
-countSort3Objs := $(OBJECTS)/countSort3.o
 
-countSort3: $(countSort3Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSort3 $(countSort3Objs)
-	$(EXE)/./countSort3
+# Command: make LPTest
+LPTestObjs := $(OBJECTS)/LPTest.o
 
-$(OBJECTS)/countSort3.o: $(PROG)/countSort3.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSort3.cpp -o $@
+LPTest: $(LPTestObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/LPTest $(LPTestObjs)
+	$(EXE)/./LPTest
+
+$(OBJECTS)/LPTest.o: $(PROG)/LPTest.cpp $(CLASSES)/LinearProbe.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/LPTest.cpp -o $@
 	
-
-# Command: make countSort
-countSortObjs := $(OBJECTS)/countSort.o
-
-countSort: $(countSortObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSort $(countSortObjs)
-	$(EXE)/./countSort
-
-$(OBJECTS)/countSort.o: $(PROG)/countSort.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSort.cpp -o $@
-
-
-
-# Command: make countSortImpr1
-countSortImpr1Objs := $(OBJECTS)/countSortImpr1.o
-
-countSortImpr1: $(countSortImpr1Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSortImpr1 $(countSortImpr1Objs)
-	$(EXE)/./countSortImpr1
-
-$(OBJECTS)/countSortImpr1.o: $(PROG)/countSortImpr1.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSortImpr1.cpp -o $@
-
-
-
-# Command: make countSortImpr2
-countSortImpr2Objs := $(OBJECTS)/countSortImpr2.o
-
-countSortImpr2: $(countSortImpr2Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSortImpr2 $(countSortImpr2Objs)
-	$(EXE)/./countSortImpr2
-
-$(OBJECTS)/countSortImpr2.o: $(PROG)/countSortImpr2.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSortImpr2.cpp -o $@
-
-
-
-# Command: make countSortImpr
-countSortImprObjs := $(OBJECTS)/countSortImpr.o
-
-countSortImpr: $(countSortImprObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSortImpr $(countSortImprObjs)
-	$(EXE)/./countSortImpr
-
-$(OBJECTS)/countSortImpr.o: $(PROG)/countSortImpr.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSortImpr.cpp -o $@
-
-
-
-# Command: make countSortSTL
-countSortSTLObjs := $(OBJECTS)/countSortSTL.o
-
-countSortSTL: $(countSortSTLObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/countSortSTL $(countSortSTLObjs)
-	$(EXE)/./countSortSTL
-
-$(OBJECTS)/countSortSTL.o: $(PROG)/countSortSTL.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/countSortSTL.cpp -o $@
-
-
-
-# Command: make sepChain
-sepChainObjs := $(OBJECTS)/sepChain.o
-
-sepChain: $(sepChainObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/sepChain $(sepChainObjs)
-	$(EXE)/./sepChain
-
-$(OBJECTS)/sepChain.o: $(PROG)/sepChain.cpp $(CLASSES)/DynArr.h $(CLASSES)/LinearProbe.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/sepChain.cpp -o $@
-
-
-
-# Command: make bucketSort
-bucketSortObjs := $(OBJECTS)/bucketSort.o
-
-bucketSort: $(bucketSortObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/bucketSort $(bucketSortObjs)
-	$(EXE)/./bucketSort
-
-$(OBJECTS)/bucketSort.o: $(PROG)/bucketSort.cpp
-	$(PP) $(CXXFLAGS) -c $(PROG)/bucketSort.cpp -o $@
-	
-
-# Make all
-all: countSort1 countSort1
-
 
 # make initialize
 # Will be called by grader to initialize your objects and executables folders
 
 initialize: 
 	mkdir objects executables
+	
+
+
+# Make all
+all: sol_1 sol_2 sol_3 sol Product1 Product2
 
 # Make clean
 clean :
