@@ -74,7 +74,9 @@ int main(){
 		}
 		
 	}
-	
+
+	std::cout << countSort << std::endl << std::endl;
+
 	/* Print the Sorted Results */
 	printSort(countSort, largestNum);
 

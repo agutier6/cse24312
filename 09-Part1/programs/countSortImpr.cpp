@@ -4,28 +4,31 @@
 * Email: matt.morrison@nd.edu
 * 
 * Shows a basic example of Counting Sort
-* using the C++ STL Libraries
 **********************************************/
-#include <unordered_map>
-#include <vector>
 #include <string>
 #include <iostream>
 
-void printHash(std::unordered_map< int, int >& countSort, int largestNum){
+#include "../classes/DynArr.h"
+#include "../classes/LinearProbe.h"
+
+void printSort(HashTable< int, int >& countSort, int largestNum){
 
 	for(int i = 0; i <= largestNum; i++){
 		
-		for(int j = 0; j < countSort[i]; ++j){
+		try{
+			for(int j = 0; j < countSort[i]; ++j){
+				
+				std::cout << i << " ";
+			}
 			
-			std::cout << i << " ";
+		}
+		catch( const std::exception& theException ){
+			// Do nothing other than catch
 		}
 
 	}
 	
 	std::cout << std::endl;
-	
-	std::cout << "Number of buckets at end of iteration: "; 
-	std::cout << countSort.bucket_count() << std::endl;
 	
 }
 
@@ -39,16 +42,22 @@ void printHash(std::unordered_map< int, int >& countSort, int largestNum){
 int main(){
 
 	/* The Hash Table for the Counting Sort */
-	std::unordered_map<int, int> countSort;
+	HashTable<int, int> countSort;
 	
 	/* A vector of values to sort */
-	std::vector<int> theVals{7, 1, 5, 7, 1, 4, 100, 44, 9};
+	DynArr<int> theVals;
+	
+	theVals.push_back( 7 ); 	theVals.push_back( 1 );
+	theVals.push_back( 5 ); 	theVals.push_back( 7 );
+	theVals.push_back( 1 ); 	theVals.push_back( 4 );
+	theVals.push_back( 100 ); 	theVals.push_back( 44 );
+	theVals.push_back( 9 );
 	
 	/* Get the largest number, which is the number of buckets */
 	int largestNum = 0;
-	for(unsigned int iter = 0; iter < theVals.size(); iter++){
+	for(unsigned int iter = 0; iter < theVals.length(); iter++){
 		
-		if( countSort.count( theVals[iter] ) == 0 ){
+		if( countSort.contains( theVals[iter] )  ){
 			
 			// Increment the value
 			countSort[ theVals[iter] ]++;
@@ -65,11 +74,11 @@ int main(){
 		}
 		
 	}
-
-	std::cout << countSort.bucket_count() << std::endl;
-
-	/* Print the Hash */
-	printHash(countSort, largestNum);
+	
+	std::cout << countSort << std::endl << std::endl;
+	
+	/* Print the Sorted Results */
+	printSort(countSort, largestNum);
 
 	return 0;
 }

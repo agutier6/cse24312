@@ -65,8 +65,8 @@ int main(){
 		}
 		
 	}
-
-	std::cout << countSort.bucket_count() << std::endl;
+	
+	std::cout << "Initial buckets: " << countSort.bucket_count() << std::endl;
 
 	/* Print the Hash */
 	printHash(countSort, largestNum);

@@ -10,11 +10,7 @@ double Fib(int n, HashTable<int, double>& fibVals){
 		return fibVals[n];
 	
 	/* Base Cases for Fibonacci */
-	if(n == 0){
-		fibVals.insert( {n, 1} );
-		return 1;
-	}
-	else if(n == 1){
+	if(n == 0 || n == 1){
 		fibVals.insert( {n, 1} );
 		return 1;
 	}
