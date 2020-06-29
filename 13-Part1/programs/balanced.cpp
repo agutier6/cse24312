@@ -1,13 +1,17 @@
 #include <iostream>
-#include <stack>
 #include <cstdlib>
 #include <fstream>
+
+#include "../classes/stack.h"
+
+#define COUT std::cout
+#define ENDL std::endl
 
 void getFileStream(int argc, char** argv, std::ifstream& ifs){
 	
 	// Must be exactly two characters
 	if(argc != 2){
-		std::cout << "Incorrect number of inputs" << std::endl;
+		COUT << "Incorrect number of inputs" << ENDL;
 		exit(-1);
 	}
 	
@@ -15,7 +19,7 @@ void getFileStream(int argc, char** argv, std::ifstream& ifs){
 	ifs.open (argv[1], std::ifstream::in);
 	
 	if(!ifs.is_open()){
-		std::cout << "Input File Name " << argv[1] << " does not exist\n";
+		COUT << "Input File Name " << argv[1] << " does not exist\n";
 		exit(-1);
 	}
 	
@@ -27,7 +31,13 @@ int main(int argc, char** argv){
 	std::ifstream codeFile;
 	getFileStream(argc, argv, codeFile);
 	
-	// Student Code Goes Here
+	// Create stacks for the {, }, (, ), [, and ]
+	stack< char > braceBegin;
+	stack< char > braceEnd;
+	stack< char > bracketBegin;
+	stack< char > bracketEnd;
+	stack< char > parenBegin;
+	stack< char > parenEnd;
 	
 	// Read in the code information information 
 	while( !codeFile.eof() ){
@@ -35,27 +45,29 @@ int main(int argc, char** argv){
 		char currChar;		
 		codeFile >> currChar;
 		
-		// Student Code Goes Here
+		// Use a switch statement
+		// chars are unsigned ints -> deterministic 
+		// switches can be implemented using 
 		
 	}
 	
 
-	std::cout << "Finding Imbalances..." << std::endl;
+	COUT << "Finding Imbalances..." << ENDL;
 	if(braceBegin.size() != braceEnd.size()){
 		
-		std::cout << "Unbalanced Braces {}" << std::endl;
-		std::cout << braceBegin.size() << " " << braceEnd.size() << std::endl;
+		COUT << "Unbalanced Braces {}" << ENDL;
+		COUT << braceBegin.size() << " " << braceEnd.size() << ENDL;
 	}
 
 	if(bracketBegin.size() != bracketEnd.size()){
 		
-		std::cout << "Unbalanced Brackets []" << std::endl;
-		std::cout << bracketBegin.size() << " " << bracketEnd.size() << std::endl;
+		COUT << "Unbalanced Brackets []" << ENDL;
+		COUT << bracketBegin.size() << " " << bracketEnd.size() << ENDL;
 	}
 	
 	if(parenBegin.size() != parenEnd.size()){
 		
-		std::cout << "Unbalanced Parenthesis ()" << std::endl;
+		COUT << "Unbalanced Parenthesis ()" << ENDL;
 		
 	}
 

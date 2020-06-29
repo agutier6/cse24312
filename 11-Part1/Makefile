@@ -1,7 +1,7 @@
 # Author: Matthew Morrison
 # E-mail: matt.morrison@nd.edu
 #
-# This is the Makefile for the CSE 24312 - Lecture 10 - Part 1
+# This is the Makefile for the CSE 24312 - Lecture 11 - Part 1
 
 # G++ is for the GCC compiler for C++
 PP := g++

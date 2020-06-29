@@ -3,13 +3,7 @@
 * Author: Matthew Morrison
 * Email: matt.morrison@nd.edu
 *  
-* This contains two solutions to the Cracking the Coding Interview
-* question "Given a circular linked list, implement an algorithm 
-* which returns node at the beginning of the loop."
-*
-* I added complexity by making the following changes:
-* 
-* a) Given a circular singly linked list, implement an algorithm which 
+* Given a circular singly linked list, implement an algorithm which 
 * returns nodes at the beginning and end of the loop.
 * b) How would your solution change if you were not permitted to use 
 * an additional data structure class?

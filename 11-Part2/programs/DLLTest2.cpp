@@ -24,6 +24,7 @@ int main(){
 	strDLL.push_front("Go");	strDLL.push_front("We");
 	strDLL.Insert("We");		strDLL.push_front("Here");
 	strDLL.Insert("Go");
+	strDLL.push_back("Data Structures");
 
 	std::cout << strDLL << std::endl;
 	
