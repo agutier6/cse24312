@@ -22,9 +22,33 @@ testRemove: $(testRemoveObjs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/testRemove $(testRemoveObjs)
 	$(EXE)/./testRemove
 
-$(OBJECTS)/testRemove.o: $(PROG)/testRemove.cpp $(CLASSES)/Graph.h
+$(OBJECTS)/testRemove.o: $(PROG)/testRemove.cpp $(CLASSES)/Graph1.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/testRemove.cpp -o $@
+	
+	
+	
+# Command: make BFS
+# Initial Examples of pthreads
+BFSObjs := $(OBJECTS)/BFS.o 
 
+BFS: $(BFSObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/BFS $(BFSObjs)
+	$(EXE)/./BFS
+
+$(OBJECTS)/BFS.o: $(PROG)/BFS.cpp $(CLASSES)/Graph2.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/BFS.cpp -o $@
+
+
+# Command: make BFS2
+# Initial Examples of pthreads
+BFS2Objs := $(OBJECTS)/BFS2.o 
+
+BFS2: $(BFS2Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/BFS2 $(BFS2Objs)
+	$(EXE)/./BFS2
+
+$(OBJECTS)/BFS2.o: $(PROG)/BFS2.cpp $(CLASSES)/Graph3.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/BFS2.cpp -o $@
 
 
 # make initialize

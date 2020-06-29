@@ -81,38 +81,6 @@ class Graph{
 			return false;
 		}
 		
-		// Remove an edge
-		void remove_edge( unsigned int origin, unsigned int destin){
-				
-			if( origin < vertices.length() && destin < vertices.length() ){
-				
-				vertices[origin].remove_edge( destin );
-			}
-		}
-		
-		void remove_vertex( unsigned int vertVal ){
-			
-			// First, perform Lazy Deletion on the vertex 
-			vertices[ vertVal ].lazy_delete();
-			
-			// Next, go through each vertex and remove all edges with the destination to the vertex 
-			for( unsigned int iter = 0; iter < vertices.length(); iter++ ){
-				
-				int jter = 0;
-				while( jter < vertices[iter].num_edges() ){
-					
-					if( vertices[iter].get_edge( jter ).destin == vertVal ){
-						vertices[iter].remove_edge( vertVal );
-					}
-					else{
-						jter++;
-					}
-				}
-				
-			}
-			
-		}
-		
 		// Overloaded Operator
 		friend std::ostream& operator<<( std::ostream& output, const Graph<T>& theGraph ){
 			
