@@ -1,10 +1,10 @@
-#include "../classes/Graph.h"
+#include "../classes/Graph5.h"
 #include <iostream>
 #include <vector>
 
 int main(){
 	
-	Graph< int > theGraph( true );
+	Graph< int > theGraph;
 	
 	theGraph.add_vertex( 4 );
 	theGraph.add_vertex( 20 );
@@ -35,13 +35,14 @@ int main(){
 	std::cout << theGraph << std::endl;
 	
 	// Run Breadth-First Search
-	theGraph.BFS( 5 );
-	theGraph.BFS( 4 );
-	theGraph.BFS( 3 );
-	theGraph.BFS( 2 );
-	theGraph.BFS( 1 );
-	theGraph.BFS( 0 );
-	theGraph.BFS( 6 );
-	theGraph.BFS( -1 );	
+	theGraph.DFS( 0, 5 );
+	theGraph.DFS( 1, 5 );
+	theGraph.DFS( 0, 4 );
+	theGraph.DFS( 2, 4 );
+	theGraph.DFS( 3, 5 );
+	theGraph.DFS( 1, 4 );
+	theGraph.DFS( 4, 1 );
+	theGraph.DFS( 6, 5 );
+	theGraph.DFS( 0, -1 );	
 	return 0;
 }

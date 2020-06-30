@@ -74,17 +74,15 @@ class Vertex{
 		// Pass the destination, return weight with call be reference, bool if found
 		bool get_edge_value( unsigned int destin, int& weight ) const{
 			
-			bool edgeFound = false;
-			
 			for( unsigned int i = 0; i < edges.length(); i++){
 				if( edges[i].destin == destin ){
-
-					edgeFound = true;
 					weight = edges[i].weight;
+					
+					return true;
 				}					
 			}
 			
-			return edgeFound;
+			return false;
 		}
 
 		// Pass the destination and weight, bool if found		

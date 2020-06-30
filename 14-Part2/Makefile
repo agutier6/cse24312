@@ -15,6 +15,31 @@ OBJECTS := objects
 	
 	
 	
+# Command: make BFS
+# Initial Examples of pthreads
+BFSObjs := $(OBJECTS)/BFS.o 
+
+BFS: $(BFSObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/BFS $(BFSObjs)
+	$(EXE)/./BFS
+
+$(OBJECTS)/BFS.o: $(PROG)/BFS.cpp $(CLASSES)/Graph7.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/BFS.cpp -o $@
+
+
+# Command: make BFS2
+# Initial Examples of pthreads
+BFS2Objs := $(OBJECTS)/BFS2.o 
+
+BFS2: $(BFS2Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/BFS2 $(BFS2Objs)
+	$(EXE)/./BFS2
+
+$(OBJECTS)/BFS2.o: $(PROG)/BFS2.cpp $(CLASSES)/Graph8.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/BFS2.cpp -o $@
+
+
+
 # Command: make MST
 MSTObjs := $(OBJECTS)/MST.o 
 
@@ -22,7 +47,7 @@ MST: $(MSTObjs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/MST $(MSTObjs)
 	$(EXE)/./MST
 
-$(OBJECTS)/MST.o: $(PROG)/MST.cpp $(CLASSES)/Graph4.h
+$(OBJECTS)/MST.o: $(PROG)/MST.cpp $(CLASSES)/Graph.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/MST.cpp -o $@
 
 
@@ -33,31 +58,8 @@ MST2: $(MST2Objs)
 	$(PP) $(CXXFLAGS) -o $(EXE)/MST2 $(MST2Objs)
 	$(EXE)/./MST2
 
-$(OBJECTS)/MST2.o: $(PROG)/MST2.cpp $(CLASSES)/Graph4.h
+$(OBJECTS)/MST2.o: $(PROG)/MST2.cpp $(CLASSES)/Graph.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/MST2.cpp -o $@
-
-
-
-# Command: make DFS
-DFSObjs := $(OBJECTS)/DFS.o 
-
-DFS: $(DFSObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/DFS $(DFSObjs)
-	$(EXE)/./DFS
-
-$(OBJECTS)/DFS.o: $(PROG)/DFS.cpp $(CLASSES)/Graph5.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/DFS.cpp -o $@
-
-
-# Command: make DFS2
-DFS2Objs := $(OBJECTS)/DFS2.o 
-
-DFS2: $(DFS2Objs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/DFS2 $(DFS2Objs)
-	$(EXE)/./DFS2
-
-$(OBJECTS)/DFS2.o: $(PROG)/DFS2.cpp $(CLASSES)/Graph5.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/DFS2.cpp -o $@
 	
 	
 

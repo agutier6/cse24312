@@ -1,4 +1,4 @@
-#include "../classes/Graph1.h"
+#include "../classes/Graph2.h"
 #include <iostream>
 #include <vector>
 

@@ -1,4 +1,4 @@
-#include "../classes/Graph2.h"
+#include "../classes/Graph7.h"
 #include <iostream>
 
 int main(){

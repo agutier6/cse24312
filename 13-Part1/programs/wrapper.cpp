@@ -74,6 +74,7 @@ int main(){
 	popAndPrint(stack2);
 	popAndPrint(stack2);
 	popAndPrint(stack2);
+	popAndPrint(stack2);
 	
 	return 0;
 	

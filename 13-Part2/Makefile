@@ -1,4 +1,4 @@
-# This is the Makefile for the CSE 20312 course Lecture 33
+# This is the Makefile for the CSE 20312 course Lecture 13 - Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -64,6 +64,18 @@ Graph: $(GraphObjs)
 $(OBJECTS)/Graph.o: $(PROG)/Graph.cpp $(CLASSES)/Graph.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/Graph.cpp -o $@
 
+
+
+# Command: make testRemove
+# Initial Examples of pthreads
+testRemoveObjs := $(OBJECTS)/testRemove.o 
+
+testRemove: $(testRemoveObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testRemove $(testRemoveObjs)
+	$(EXE)/./testRemove
+
+$(OBJECTS)/testRemove.o: $(PROG)/testRemove.cpp $(CLASSES)/Graph1.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/testRemove.cpp -o $@
 
 
 # make initialize
