@@ -43,6 +43,7 @@ int main(){
 	theGraph.DFS( 1, 4 );
 	theGraph.DFS( 4, 1 );
 	theGraph.DFS( 6, 5 );
+	theGraph.DFS( 1, 1 );
 	theGraph.DFS( 0, -1 );	
 	return 0;
 }

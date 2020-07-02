@@ -98,9 +98,17 @@ $(OBJECTS)/FindKthLargest.o: $(PROG)/FindKthLargest.cpp $(CLASSES)/MinHeap.h
 	$(PP) $(CXXFLAGS) -c $(PROG)/FindKthLargest.cpp -o $@
 
 
+
 # Make all
 all: testMaxHeap1 testMaxHeap2
 
+
+
+# make initialize
+# Will be called by grader to initialize your objects and executables folders
+initialize: 
+	mkdir objects executables
+	
 
 # Make clean
 clean :
