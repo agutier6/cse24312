@@ -21,10 +21,8 @@ class Priority{
 		Priority<T>& operator=( const Priority<T>& rhs ){
 			
 			if( this != &rhs ){
-				
 				this->element = rhs.element;
 				this->weight = rhs.weight;
-				
 			}
 			return *this;
 		}

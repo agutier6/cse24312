@@ -25,35 +25,22 @@ int main(){
 	
 	Trie theTrie;
 	STRING BAT("BAT");
-	STRING BAT_CAVE("BAT-CAVE");
-	STRING BAT_COMPUTER("BAT-COMPUTER");
-	STRING BAT_DANCE("BAT-DANCE");
-	STRING BAT_DIAMOND("BAT-DIAMOND");
-	STRING BAT_PHONE("BAT-PHONE");
-	STRING BAT_SHARK("BAT-SHARK");
-	STRING BAT_SIGNAL("BAT-SIGNAL");
-	STRING BAT_TASER("BAT-TASER");
-	STRING BAT_TRACER("BAT-TRACER");
-	STRING BATARANG("BATARANG");
-	STRING BATGIRL("BATGIRL");
-	STRING BATMAN("BATMAN");
+	STRING BAT_CAVE("BAT-CAVE");		STRING BAT_COMPUTER("BAT-COMPUTER");
+	STRING BAT_DANCE("BAT-DANCE");		STRING BAT_DIAMOND("BAT-DIAMOND");
+	STRING BAT_PHONE("BAT-PHONE");		STRING BAT_SHARK("BAT-SHARK");
+	STRING BAT_SIGNAL("BAT-SIGNAL");	STRING BAT_TASER("BAT-TASER");
+	STRING BAT_TRACER("BAT-TRACER");	STRING BATARANG("BATARANG");
+	STRING BATGIRL("BATGIRL");			STRING BATMAN("BATMAN");
 	STRING BATMOBILE("BATMOBILE");
 	
 	// Add Strings to the Trie
-	theTrie.addString(BAT);
-	theTrie.addString(BAT_CAVE);
-	theTrie.addString(BAT_COMPUTER);
-	theTrie.addString(BAT_DANCE);
-	theTrie.addString(BAT_DIAMOND);
-	theTrie.addString(BAT_PHONE);
-	theTrie.addString(BAT_SHARK);
-	theTrie.addString(BAT_SIGNAL);
-	theTrie.addString(BAT_TASER);
-	theTrie.addString(BAT_TRACER);
-	theTrie.addString(BATARANG);
-	theTrie.addString(BATGIRL);
-	theTrie.addString(BATMAN);
-	theTrie.addString(BATMOBILE);
+	theTrie.addString(BAT);				theTrie.addString(BAT_CAVE);
+	theTrie.addString(BAT_COMPUTER);	theTrie.addString(BAT_DANCE);
+	theTrie.addString(BAT_DIAMOND);		theTrie.addString(BAT_PHONE);
+	theTrie.addString(BAT_SHARK);		theTrie.addString(BAT_SIGNAL);
+	theTrie.addString(BAT_TASER);		theTrie.addString(BAT_TRACER);
+	theTrie.addString(BATARANG);		theTrie.addString(BATGIRL);
+	theTrie.addString(BATMAN);			theTrie.addString(BATMOBILE);
 	
 	// Print the Pre-Order Traversal
 	theTrie.printTriePreOrder();

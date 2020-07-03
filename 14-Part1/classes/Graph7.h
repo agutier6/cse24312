@@ -472,6 +472,7 @@ class Graph{
 			
 			// Otherwise, go through the parents until we find the origin
 			if( found ){
+				
 				unsigned int sentinel = destin;	
 				finalPath.push( sentinel );		// Push the desination onto the stack
 				

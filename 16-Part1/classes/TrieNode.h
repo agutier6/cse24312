@@ -5,7 +5,6 @@
 
 class TrieNode{
 
-
 private:
 
 	char trieLetter;
@@ -19,25 +18,34 @@ public:
 	// Constructor with char input
 	TrieNode(char charIn) : trieLetter(charIn), childNodes(0) {}
 	
+	// Add a child character
 	void addChild( char childChar ){
-		
+
 		TrieNode temp(childChar);
-		
+
 		// Check if the letter already exists
 		for(unsigned int iter = 0; iter < childNodes.length(); iter++){
-			
+
 			if( childNodes[iter].getLetter() == childChar ){
-				
+
 				// Do not add duplicate
 				return;
-				
+
+			}
+			
+			if( childNodes[iter].getLetter() < childChar ){
+				// Greater than the currentChar
+				// Not in Sorted 
+				break;
 			}
 		}
 		
+		// Insert the node in the Sorted Array
 		childNodes.Insert(temp);
-		
 	}
+
 	
+	// Get the Child Pointer
 	TrieNode* getChildPtr( char childChar ){
 		
 		for(unsigned int iter = 0; iter < childNodes.length(); iter++){
@@ -50,7 +58,6 @@ public:
 		}
 		
 		// If it gets here, there was no child 
-		
 		return NULL;
 		
 	}
@@ -79,31 +86,26 @@ public:
 	bool operator<( const TrieNode& rhs ) const{
 		
 		return trieLetter < rhs.trieLetter;
-		
 	}
 	
 	bool operator<=( const TrieNode& rhs ) const{
 		
 		return trieLetter <= rhs.trieLetter;
-		
 	}
 	
 	bool operator>( const TrieNode& rhs ) const{
 		
 		return trieLetter > rhs.trieLetter;
-		
 	}
 	
 	bool operator>=( const TrieNode& rhs ) const{
 		
 		return trieLetter >= rhs.trieLetter;
-		
 	}
 	
 	bool operator==( const TrieNode& rhs ){
 		
 		return trieLetter == rhs.trieLetter;
-		
 	}
 	
 	friend std::ostream& operator<<( std::ostream& output, const TrieNode& TN){
@@ -112,13 +114,6 @@ public:
 		
 		return output;
 	}
-	
-	/*friend std::ostream& operator<<( std::ostream& output, const TrieNode* TN){
-		
-		output << TN->trieLetter << " ";
-		
-		return output;
-	}*/
 
 };
 

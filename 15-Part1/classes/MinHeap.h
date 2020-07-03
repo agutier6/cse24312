@@ -20,8 +20,6 @@ class MinHeap : public MaxHeap<T>{
 			unsigned int parent = (heapLoc - 1)/2;
 			
 			// Perform the trickle up 
-			// Parent >= 0 ensures we do not exceed the array bound 
-			// We also should stop once the trickle up condition is met
 			while( parent >= 0 && this->heapArray[ parent ] > this->heapArray[ heapLoc ] ){
 				
 				// Swap the elements
@@ -66,7 +64,6 @@ class MinHeap : public MaxHeap<T>{
 				
 			}
 			
-
 			// Check left for improper issues 
 			if( this->heapArray[prevVal] > this->heapArray[2 * prevVal + 1] ){
 				

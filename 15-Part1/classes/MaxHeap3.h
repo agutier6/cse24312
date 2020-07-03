@@ -80,7 +80,6 @@ class MaxHeap{
 					
 					trickleDown( prevVal, 2 * prevVal + 2 );
 				}
-				
 			}
 			
 		}

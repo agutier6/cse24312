@@ -34,37 +34,26 @@ class PriorityQueue {
 		void pop(){
 
 			if(queueSize > 0){
-
 				heap.pop();
 				queueSize--;
-
 			}
 		}
 
 		T front() const{
-			
 			return heap.top();
-			
 		}
 		
 		unsigned int max_size() const{
-			
 			return max_len;
-			
 		}
 
 		unsigned int size() const{
-			
 			return queueSize;
-			
 		}
 
 		bool empty() const{
-			
 			return queueSize == 0;
-			
 		}
-
 
 };
 

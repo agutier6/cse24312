@@ -22,12 +22,8 @@ int main(){
 	Priority< std::string > priority7("Up", 2);
 	
 	// Push the Priority Elements
-	thePQ.push( priority1 );
-	thePQ.push( priority2 );
-	thePQ.push( priority3 );
-	thePQ.push( priority4 );
-	thePQ.push( priority5 );
-	thePQ.push( priority6 );
+	thePQ.push( priority1 );	thePQ.push( priority2 );	thePQ.push( priority3 );
+	thePQ.push( priority4 );	thePQ.push( priority5 );	thePQ.push( priority6 );
 	thePQ.push( priority7 );
 	
 	// Print the results from pop
@@ -36,7 +32,6 @@ int main(){
 		
 		COUT << thePQ.front() << ENDL;
 		thePQ.pop();
-		
 	}
 
 	return 0;

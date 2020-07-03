@@ -53,6 +53,7 @@ class SorDLList : public DLList<T>{
 					curr = curr->next;
 				}
 		  
+				// Inserting at the front
 				if( prev != NULL ){
 					/* insert the node, temp, at the end */
 					prev -> next = temp;
@@ -69,7 +70,7 @@ class SorDLList : public DLList<T>{
 					
 				}
 			  
-				/* Allocate curr */
+				/* Inserting at the back */
 				if( curr != NULL ){
 					curr -> prev = temp;
 					temp -> next = curr;

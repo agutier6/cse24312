@@ -9,19 +9,25 @@
 
 void addString( TrieNode* theNode, const std::string& word, unsigned int value ){
 	
+	// We haven't reach the end of the word
 	if( value < word.size() ){
 		
+		// Add each character to the word
+		// addChild will not permit duplicates
 		theNode->addChild( word[value] );
 		
+		// Get the TrieNode correlating to the char
 		TrieNode* nextLevel = theNode->getChildPtr( word[value] );
 		
+		// Recursively call the next level
 		addString( nextLevel, word, value + 1);
 	}
 	
+	// If we have reached the end of the word
 	else if( value == word.size() ){
 		
+		// Add a star indicating this is a valid word
 		theNode->addChild( '*' );
-		
 		return;
 	}
 	
@@ -30,36 +36,29 @@ void addString( TrieNode* theNode, const std::string& word, unsigned int value )
 
 void printTriePreOrder( TrieNode* theNode, unsigned int level ){
 	
+	// If we've reached the end, return 
 	if( theNode == NULL ){
-		
 		return;
-		
 	}
 	
-	// Root Node 
+	// If we are at the root, just print the level
 	if( theNode->getLetter() == 0 ){
-		
 		COUT << "root: " << level << ENDL;
-		
 	}
 	
 	else{
-		
+		// Print the letter and the level
 		COUT << theNode->getLetter() << " " << level << ENDL;
-		
 	}
 	
+	// If we are at a star, we can return
 	if( theNode->getLetter() == '*' ){
-		
 		return;
-		
 	}
 	
-	// If we get here, there are children 
+	// Otherwise, recursively call
 	for(unsigned int iter = 0; iter < theNode->numChildren(); iter++){
-	
 		printTriePreOrder(theNode->getChildPtrOrder(iter), level + 1);
-		
 	}
 	
 }
