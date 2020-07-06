@@ -74,7 +74,7 @@ class BST{
 			
 		}
 		
-		// Printing Pre Order 
+		// Private method - Printing Pre Order 
 		void printPreOrder( std::ostream& output, const BSTNode< T >* currNode ) const{
 			
 			// Return if currNode is null 
@@ -86,10 +86,10 @@ class BST{
 			output << currNode->data << " ";
 			
 			// Recursively call the left child 
-			printInOrder( output, currNode->left );
+			printPreOrder( output, currNode->left );
 			
 			// Recursively call the right child 
-			printInOrder( output, currNode->right );
+			printPreOrder( output, currNode->right );
 			
 		}
 		

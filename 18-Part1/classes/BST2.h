@@ -14,7 +14,7 @@ class BST{
 	
 	private:
 	
-		// Private Insert Method
+		// Private Insert Method - Fixed with a Call by Reference
 		void Insert( BSTNode< T >*& currPtr, const T& value ){
 			
 			// If the pointer is Null, we found our location 
@@ -38,7 +38,6 @@ class BST{
 				// Print that we found a duplicate
 				std::cout << value << " is a duplicate " << std::endl;
 			}			
-			
 		}
 		
 		// Copy Tree - Uses Pre-Order Traversal
@@ -69,6 +68,7 @@ class BST{
 			// Recursively call the left child 
 			printInOrder( output, currNode->left );
 			
+			// Print the Value to the ostream
 			output << currNode->data << " ";
 			
 			// Recursively call the right child 

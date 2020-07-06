@@ -76,6 +76,7 @@ class BST{
 		}
 		
 		// Printing Pre Order 
+		// Printing Pre Order 
 		void printPreOrder( std::ostream& output, const BSTNode< T >* currNode ) const{
 			
 			// Return if currNode is null 
@@ -87,10 +88,10 @@ class BST{
 			output << currNode->data << " ";
 			
 			// Recursively call the left child 
-			printInOrder( output, currNode->left );
+			printPreOrder( output, currNode->left );
 			
 			// Recursively call the right child 
-			printInOrder( output, currNode->right );
+			printPreOrder( output, currNode->right );
 			
 		}
 		
@@ -104,10 +105,10 @@ class BST{
 			}
 			
 			// Recursively call the left child 
-			printInOrder( output, currNode->right );
+			printPostOrder( output, currNode->right );
 			
 			// Recursively call the right child 
-			printInOrder( output, currNode->left );
+			printPostOrder( output, currNode->left );
 			
 			// Print the middle node first
 			output << currNode->data << " ";			
@@ -140,16 +141,16 @@ class BST{
 				// Print the value to the user
 				output << currNode->data << " ";
 				
+				// Push the left child onto the queue
 				if( currNode->left != NULL ){
 					levelQueue.push( (void *)(currNode->left) );
 				}
 				
+				// Push the right child onto the queue
 				if( currNode->right != NULL ){
 					levelQueue.push( (void *)(currNode->right) );
 				}
-				
 			}
-			
 		}
 		
 		// Delete the pointers using post-order traversal

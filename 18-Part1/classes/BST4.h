@@ -86,15 +86,15 @@ class BST{
 			output << currNode->data << " ";
 			
 			// Recursively call the left child 
-			printInOrder( output, currNode->left );
+			printPreOrder( output, currNode->left );
 			
 			// Recursively call the right child 
-			printInOrder( output, currNode->right );
+			printPreOrder( output, currNode->right );
 			
 		}
 		
 		
-		// Printing Post Order 
+		// Private Method - Printing Post Order 
 		void printPostOrder( std::ostream& output, const BSTNode< T >* currNode ) const{
 			
 			// Return if currNode is null 
@@ -103,10 +103,10 @@ class BST{
 			}
 			
 			// Recursively call the left child 
-			printInOrder( output, currNode->right );
+			printPostOrder( output, currNode->right );
 			
 			// Recursively call the right child 
-			printInOrder( output, currNode->left );
+			printPostOrder( output, currNode->left );
 			
 			// Print the middle node first
 			output << currNode->data << " ";			

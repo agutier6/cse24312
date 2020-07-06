@@ -1,5 +1,5 @@
-#ifndef BSTNODE1_H
-#define BSTNODE1_H
+#ifndef BSTNODE2_H
+#define BSTNODE2_H
 
 #include <cstdlib>	// Needed for NULL keyword
 
