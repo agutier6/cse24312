@@ -87,6 +87,8 @@ int main(int argc, char** argv){
 		
 		dictionaryIn >> word;
 		
+		// COUT << word << ENDL;
+		
 		dictTrie.addString( word );
 		
 	}

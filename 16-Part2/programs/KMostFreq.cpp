@@ -16,7 +16,7 @@ void findKthLargest( DynArr< Priority<int> >& results, unsigned int kTh ){
 	
 	// Protect the array from kth larger or smaller than elements
 	if( kTh > results.length() || kTh == 0){
-		COUT << kTh << " exceeds the array length of " << results.length() << ENDL;
+		COUT << kTh << " exceeds the array bounds of 1 to " << results.length() << ENDL;
 		return;
 	}
 	
@@ -86,12 +86,10 @@ int main(){
 	/* A vector of values to sort */
 	DynArr<int> theVals;
 	
-	theVals.push_back( 1 ); 	theVals.push_back( 2 );
-	theVals.push_back( 3 ); 	theVals.push_back( 1 );
-	theVals.push_back( 2 ); 	theVals.push_back( 1 );
-	theVals.push_back( 100 );	theVals.push_back( 3 );
-	theVals.push_back( 1 );		theVals.push_back( 55 );
-	theVals.push_back( 2 );	
+	theVals.push_back( 1 ); 	theVals.push_back( 2 );		theVals.push_back( 3 ); 	
+	theVals.push_back( 1 );		theVals.push_back( 2 ); 	theVals.push_back( 1 );
+	theVals.push_back( 100 );	theVals.push_back( 3 );		theVals.push_back( 1 );		
+	theVals.push_back( 55 );	theVals.push_back( 2 );	
 	
 	/* Get the largest number, which is the number of buckets */
 	int largestNum = 0;
@@ -101,7 +99,6 @@ int main(){
 			
 			// Increment the value
 			countSort[ theVals[iter] ]++;
-			
 		}
 		else{
 			// Initialize the count at 1
@@ -112,7 +109,6 @@ int main(){
 		if(theVals[iter] > largestNum){
 			largestNum = theVals[iter];
 		}
-		
 	}
 
 	/* Print the Sorted Results */

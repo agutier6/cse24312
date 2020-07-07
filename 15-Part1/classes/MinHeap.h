@@ -39,7 +39,7 @@ class MinHeap : public MaxHeap<T>{
 		// Recursively trickle the element down 
 		void trickleDown( unsigned int prevVal, unsigned int nextVal ){
 			
-			if( nextVal == 0 ){
+			if( nextVal == 0 || nextVal >= this->heapArray.length() ){
 				return;
 			}
 			
@@ -69,6 +69,9 @@ class MinHeap : public MaxHeap<T>{
 				
 				trickleDown( prevVal, 2 * prevVal + 1 );
 				
+				trickleDown( 2 * prevVal + 1, 4 * prevVal + 3 );
+				trickleDown( 2 * prevVal + 1, 4 * prevVal + 4 );
+				
 			}
 			
 			// Check right for improper issues 
@@ -77,6 +80,9 @@ class MinHeap : public MaxHeap<T>{
 				if( this->heapArray[prevVal] > this->heapArray[2 * prevVal + 2] ){
 					
 					trickleDown( prevVal, 2 * prevVal + 2 );
+					
+					trickleDown( 2 * prevVal + 2, 4 * prevVal + 5 );
+					trickleDown( 2 * prevVal + 2, 4 * prevVal + 6 );
 				}
 				
 			}

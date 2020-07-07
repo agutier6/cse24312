@@ -35,12 +35,13 @@ class MaxHeap{
 				}
 
 			}
+			
 		}
 		
 		// Recursively trickle the element down 
 		virtual void trickleDown( unsigned int prevVal, unsigned int nextVal ){
 			
-			if( nextVal == 0 ){
+			if( nextVal == 0 || nextVal >= heapArray.length() ){
 				return;
 			}
 			
@@ -65,12 +66,15 @@ class MaxHeap{
 				
 			}
 			
-
+			
+			
 			// Check left for improper issues 
 			if( heapArray[prevVal] < heapArray[2 * prevVal + 1] ){
 				
 				trickleDown( prevVal, 2 * prevVal + 1 );
 				
+				trickleDown( 2 * prevVal + 1, 4 * prevVal + 3 );
+				trickleDown( 2 * prevVal + 1, 4 * prevVal + 4 );
 			}
 			
 			// Check right for improper issues 
@@ -79,6 +83,9 @@ class MaxHeap{
 				if( heapArray[prevVal] < heapArray[2 * prevVal + 2] ){
 					
 					trickleDown( prevVal, 2 * prevVal + 2 );
+					
+					trickleDown( 2 * prevVal + 2, 4 * prevVal + 5 );
+					trickleDown( 2 * prevVal + 2, 4 * prevVal + 6 );
 				}
 				
 			}
@@ -155,17 +162,19 @@ class MaxHeap{
 			
 			// Only trickle up if the length is greater than 1
 			if ( heapArray.length() > 1 ){
-			
+				
+				//std::cout << "Start: " << heapArray[ heapArray.length() / 2 - 1 ] << " " << heapArray[ heapArray.length() - 1 ] << std::endl;
+				
 				trickleDown( heapArray.length() / 2 - 1, heapArray.length() - 1 );
 
 			}
-
 			
 		}
 	
 		// Overloaded friend operator<<
 		friend std::ostream& operator<<( std::ostream& output, const MaxHeap<T>& theHeap ){
 			
+			output << "Length = " << theHeap.heapArray.length() << ": ";
 			for(unsigned int iter = 0; iter < theHeap.heapArray.length(); iter++ ){
 				
 				output << theHeap.heapArray[ iter ] << " ";
