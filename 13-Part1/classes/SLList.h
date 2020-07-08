@@ -224,14 +224,12 @@ class SLList{
 				
 			if(this != &assign){
 				
-				node* prev = NULL;
 				node* curr = assign.head;
 				
 				while(curr != NULL){
 					
 					this->Insert(curr->data);
 						
-					prev = curr;
 					curr = curr->next;
 					
 				}

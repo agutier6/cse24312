@@ -293,14 +293,12 @@ class SLList{
 				
 			if(this != &assign){
 				
-				node* prev = NULL;
 				node* curr = assign.head;
 				
 				while(curr != NULL){
 					
 					this->Insert(curr->data);
 						
-					prev = curr;
 					curr = curr->next;
 					
 				}
@@ -420,6 +418,30 @@ class SLList{
 		   }      
 		}
 
+		bool pop_front(){
+
+		   if (IsEmpty ())
+		   {
+			  std::cout << "Can't delete from an empty list" << std::endl;
+			  return (-1);
+		   }
+
+		   /* if the target value is the first in the list, move head */
+		   else
+		   {
+				node* temp = head;
+				head = head -> next;
+				free (temp);
+				return true;
+		   }
+			
+		}
+		
+		T front() const{
+			
+			return head->data;
+			
+		}
 
 		/********************************************
 		* Function Name  : IsEmpty
