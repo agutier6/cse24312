@@ -134,8 +134,6 @@ class DynArr{
 				unsigned int tmp_iter = 0;
 				for(unsigned int data_iter = 0; data_iter < size; ++data_iter){
 					
-					std::cout << *(data + data_iter) << " " << data_iter << std::endl;
-					
 					if( data_iter != e ){
 						
 						tmp[tmp_iter] = *(data + data_iter);
