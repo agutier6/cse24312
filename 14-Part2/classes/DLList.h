@@ -98,11 +98,7 @@ class DLList{
 			* Rule of 3: Copy Constructor
 			* Required for -weffc++ flag
 			********************************************/
-			node(const node& copy){
-				data = copy.data;
-				next = copy.next;
-				prev = copy.prev;
-			}
+			node(const node& copy) : data(copy.data), next(NULL), prev(NULL) {}
 			
 			
 			/********************************************
