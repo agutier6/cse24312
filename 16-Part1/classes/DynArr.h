@@ -1,6 +1,8 @@
 #ifndef DYNARR_H
 #define DYNARR_H
 
+#include <iostream>
+
 template<class T>
 class DynArr{
 	
@@ -122,10 +124,17 @@ class DynArr{
 					capac = capac / 2;
 				}
 				
+				if( capac == 0 ){
+					
+					capac = 1;
+				}
+				
 				T* tmp = new T[capac];
 				
 				unsigned int tmp_iter = 0;
-				for(unsigned int data_iter = 0; data_iter < capac; ++data_iter){
+				for(unsigned int data_iter = 0; data_iter < size; ++data_iter){
+					
+					std::cout << *(data + data_iter) << " " << data_iter << std::endl;
 					
 					if( data_iter != e ){
 						

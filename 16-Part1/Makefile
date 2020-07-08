@@ -52,6 +52,16 @@ $(OBJECTS)/WordBreak.o: $(PROG)/WordBreak.cpp
 	$(PP) $(CXXFLAGS) -c $(PROG)/WordBreak.cpp -o $@
 
 
+# Command: make testDynArr
+testDynArrObjs := $(OBJECTS)/testDynArr.o 
+
+testDynArr: $(testDynArrObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testDynArr $(testDynArrObjs)
+	$(EXE)/./testDynArr
+
+$(OBJECTS)/testDynArr.o: $(PROG)/testDynArr.cpp
+	$(PP) $(CXXFLAGS) -c $(PROG)/testDynArr.cpp -o $@
+
 
 # Make all
 all: TrieNodeTest TrieTest WordBreak
