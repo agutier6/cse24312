@@ -14,6 +14,8 @@
 #include <iostream>
 #include <unordered_map>
 
+#include "DLList.h"
+
 template<class T>
 class SorDLList : public DLList<T>{
 	

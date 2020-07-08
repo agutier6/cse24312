@@ -14,7 +14,6 @@ EXE := executables
 OBJECTS := objects
 	
 	
-	
 # Command: make BFS
 # Initial Examples of pthreads
 BFSObjs := $(OBJECTS)/BFS.o 
