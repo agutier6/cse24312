@@ -1,12 +1,10 @@
 #ifndef DYNARR_H
 #define DYNARR_H
 
-#include <iostream>
-
 template<class T>
 class DynArr{
 	
-		protected:
+		private:
 		
 			unsigned int size; // Current number of elements
 			unsigned int capac; // Current capacity
@@ -29,7 +27,7 @@ class DynArr{
 				data(new T[capac]) {}
 				
 				
-			virtual ~DynArr(){
+			~DynArr(){
 				delete [] data;
 			}
 			
@@ -39,6 +37,7 @@ class DynArr{
 			{
 				copy(data, C.data, C.size);
 			}
+			
 			
 			DynArr<T>& operator=(const DynArr<T>& assign){
 				
@@ -96,11 +95,24 @@ class DynArr{
 			void push_back(const T& value){
 				
 				if(size >= capac){
-					capac = capac * 2;
+					
+					if( size == 0 ){
+						
+						capac = 1;
+					}
+					
+					else{
+						capac = capac * 2;
+					}
+					
 					T* tmp = new T[capac];
+					
 					copy(tmp, data, size);
+					
 					delete [] data;
+					
 					data = tmp;
+					
 				}
 				
 				data[size] = value;
@@ -122,11 +134,6 @@ class DynArr{
 				// current capacity 
 				if(size - 1 == capac / 2){
 					capac = capac / 2;
-				}
-				
-				if( capac == 0 ){
-					
-					capac = 1;
 				}
 				
 				T* tmp = new T[capac];
