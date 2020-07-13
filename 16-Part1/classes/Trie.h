@@ -126,6 +126,7 @@ class Trie{
 		bool contains( const std::string& word ) const{
 			
 			unsigned int iter = 0;
+			
 			while( iter < root->numChildren() ){
 				
 				if( root->getChildPtrOrder(iter)->getLetter() == word[0] )

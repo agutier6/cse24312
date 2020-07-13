@@ -58,7 +58,9 @@ void printTriePreOrder( TrieNode* theNode, unsigned int level ){
 	
 	// Otherwise, recursively call
 	for(unsigned int iter = 0; iter < theNode->numChildren(); iter++){
+		
 		printTriePreOrder(theNode->getChildPtrOrder(iter), level + 1);
+		
 	}
 	
 }

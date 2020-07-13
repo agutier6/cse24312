@@ -102,10 +102,10 @@ class BST{
 				return;
 			}
 			
-			// Recursively call the left child 
+			// Recursively call the right child 
 			printPostOrder( output, currNode->right );
 			
-			// Recursively call the right child 
+			// Recursively call the left child 
 			printPostOrder( output, currNode->left );
 			
 			// Print the middle node first
