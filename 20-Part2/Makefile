@@ -1,4 +1,4 @@
-# This is the Makefile for the CSE 20312 course Lecture 36
+# This is the Makefile for the CSE 20312 course - Lecture 20 Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -8,11 +8,10 @@ FLAGS := -O0 -g -Wall -Wextra -Wconversion -Wshadow -pedantic -Werror
 CXXFLAGS := -m64 -std=c++11 -Weffc++ $(FLAGS) 
 
 # Variables for Folders
-36 := ~/DSSols/36-BitBloom
-CLASSES := $(36)/classes
-PROG := $(36)/programs
-EXE := $(36)/executables
-OBJECTS := $(36)/objects
+CLASSES := classes
+PROG := programs
+EXE := executables
+OBJECTS := objects
 
 
 	
@@ -39,37 +38,13 @@ BloomURL: $(BloomURLObjs)
 $(OBJECTS)/BloomURL.o: $(PROG)/BloomURL.cpp
 	$(PP) $(CXXFLAGS) -c $(PROG)/BloomURL.cpp -o $@
 
-
-
+# Initialize 
+initialize:
+	mkdir $(OBJECTS) $(EXE)
 
 # Make all
 all: SubsetSums BloomURL
 
-
 # Make clean
 clean :
 	rm -rf *.o $(OBJECTS)/* $(EXE)/*
-	
-	
-# Make gitPre
-gitPre:
-	make clean
-	git add Makefile $(PROG)/*
-	git commit -m "Lecture 36 Preview Assignment"
-	git push
-
-	
-# Make gitIn
-gitIn:
-	make clean
-	git add Makefile $(PROG)/*
-	git commit -m "Lecture 36 In Class"
-	git push
-	
-	
-# Make gitIn
-gitFix:
-	make clean
-	git add --all
-	git commit -m "Lecture 36 In Class - Fix"
-	git push
