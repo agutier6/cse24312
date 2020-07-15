@@ -204,6 +204,7 @@ class RBTree {
 			copyTree( destin->left, origin->left );
 			copyTree( destin->right, origin->right );
 			
+			// Update the Parents of the nodes
 			if( destin->left != NULL ){
 				destin->left->parent = destin;
 			}

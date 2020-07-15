@@ -48,7 +48,6 @@ class RBTree {
 						temp = temp->right; 
 				} 
 			} 
-			
 			// Retrn the pointer to the result
 			return temp; 
 		} 
@@ -253,9 +252,12 @@ class RBTree {
 				return NULL; 
 			
 			// when single child 
+			
+			// If left isn't NULL, return left
 			if (x->left != NULL) 
 				return x->left; 
 			
+			// Otherwise, return right child
 			else
 				return x->right; 
 		} 
@@ -304,8 +306,24 @@ class RBTree {
 				// Case where sibling is black
 				else { 
 				
+					// If the sibling does not have a red child
+					if ( !sibling->hasRedChild() ) { 
+					
+						// 2 black children 
+						// Make the sibling's color red
+						sibling->color = RED; 
+						
+						// If the parent's color is black, fix the double black
+						if (parent->color == BLACK) 
+							fixDoubleBlack(parent); 
+						
+						// Otherwise, make the parent's color black
+						else
+							parent->color = BLACK; 
+					} 
+				
 					// The the black sibling has a red child 
-					if (sibling->hasRedChild()) { 
+					else { 
 						
 						// In the case where the sibling's left child is red
 						if (sibling->left != NULL && sibling->left->color == RED) { 
@@ -325,7 +343,7 @@ class RBTree {
 							} 
 						}
 						
-						// This means the red child must be valid and red
+						// This means the red child must be on the right and red
 						else { 
 							if (sibling->isOnLeft()) { 
 								// left right 
@@ -340,15 +358,6 @@ class RBTree {
 								leftRotate(parent); 
 							} 
 						}	 
-						parent->color = BLACK; 
-					} 
-				
-					else { 
-					// 2 black children 
-						sibling->color = RED; 
-						if (parent->color == BLACK) 
-						fixDoubleBlack(parent); 
-						else
 						parent->color = BLACK; 
 					} 
 				} 
@@ -544,78 +553,90 @@ class RBTree {
 				return; 
 			} 
 			
+			// Delete the node we retrieved
 			deleteNode(u); 
 		} 
 		
 		// Delete a node at a given address 
 		void deleteNode( RBTNode<T>*& u ){
 			
+			// Set the updated value of V as the node to replace u
 			RBTNode<T>* v = RBTreplace(u);
+			
+			// If u and v are both black, set to true
 			bool uvBlack = ( (v == NULL) || v->color == BLACK ) && u->color == BLACK;
+			
+			// Set a temporary node parent as u's parent
 			RBTNode<T>* parent = u->parent;
 			
+			// If v is null
 			if( v == NULL ){
 				
+				// If u is the root, then make the tree empty
 				if( u == root ){
 					root = NULL;
 				}
 				else{
-					
+					// If both uv and v are black, then fix double-black about u (non-NULL)_
 					if( uvBlack ){
 						fixDoubleBlack(u);
 					}
+					
+					// Otherwise, if u's sibling isn't null, make it's color RED
 					else{
 						if( u->sibling() != NULL ){
 							u->sibling()->color = RED;
 						}
 					}
 		
+					// Then make the original parent's appropriate child NULL
 					if( u->isOnLeft() )
 						parent->left = NULL;
 					else
 						parent->right = NULL;
-					
 				}
 				
+				// Delete u, the node to be deleted and return
 				delete u;
 				return;
 			}
 			
+			// If v is not NULL, and one of u's children is NULL
 			if( u->left == NULL || u->right == NULL ){
 				
+				// If u is the root, then swap u and v's values, and delete v
 				if( u == root ){
-					
 					u->value = v->value;
 					u->left = u->right = NULL;
 					delete v;
-					
 				}
 				else{
-					
+					// Set v to u's location, delete u, and update v's parent
 					if( u->isOnLeft() ){
 						parent->left = v;
 					}
 					else{
 						parent->right = v;
 					}
-					
 					delete u;
-					
 					v->parent = parent;
 					
+					// If u and v were both black, we will need to fixDouble
 					if(uvBlack){
 						fixDoubleBlack(v);
 					}
 					else{
-						v->color = BLACK;
+						v->color = BLACK;	// Otherwise, just set v to black
 					}
-					
 				}
-				
 				return;
-				
 			}
 			
+			// If we got here, this means: 
+			// 1) v is not NULL
+			// 2) both of u's children are NULL 
+			// Then we need to swap the values of u and v 
+			// Then, we recursively delete v
 			swapValues(u, v);
 			deleteNode(v);
 		}

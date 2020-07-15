@@ -61,14 +61,15 @@ class RBTree {
 		// Copy Constructor
 		RBTree( const RBTree<T>& copy ) : root( copy.root ){
 			
+			// Copy the values and colors from copy tree
 			copyTree( root, copy.root );
-			
 		}
 		
 		// Assignment Operator
 		RBTree<T>& operator=( const RBTree<T>& rhs ){
 			
 			if( this != &rhs ){
+				// Copy the values and colors from rhs tree
 				copyTree( this->root, rhs.root );
 			}
 			return *this;

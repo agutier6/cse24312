@@ -1,4 +1,7 @@
-# This is the Makefile for the CSE 20312 course - Lecture 20 Part 2
+# Author: Matthew Morrison
+# E-mail: matt.morrison@nd.edu
+#
+# This is the Makefile for the CSE 20312 course Lecture 20 - Part 1
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -14,37 +17,60 @@ EXE := executables
 OBJECTS := objects
 
 
-	
-# Command: make SubsetSums
-# Initial Examples of bitsets using Subset Sum problem
-SubsetSumsObjs := $(OBJECTS)/SubsetSums.o 
+# Command: make SplayTest
+# Shows a successful Splay Tree Test
+SplayTestObjs := $(OBJECTS)/SplayTest.o
 
-SubsetSums: $(SubsetSumsObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/SubsetSums $(SubsetSumsObjs)
-	$(EXE)/./SubsetSums
+SplayTest: $(SplayTestObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/SplayTest $(SplayTestObjs)
+	$(EXE)/./SplayTest
 
-$(OBJECTS)/SubsetSums.o: $(PROG)/SubsetSums.cpp
-	$(PP) $(CXXFLAGS) -c $(PROG)/SubsetSums.cpp -o $@
+$(OBJECTS)/SplayTest.o: $(PROG)/SplayTest.cpp $(CLASSES)/SplayTree.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/SplayTest.cpp -o $@
 
 
-# Command: make BloomURL
-# Initial Examples of Bloom Filter
-BloomURLObjs := $(OBJECTS)/BloomURL.o 
 
-BloomURL: $(BloomURLObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/BloomURL $(BloomURLObjs)
-	$(EXE)/./BloomURL $(PROG)/Access_URLs.txt $(PROG)/NDCSE_URLs.txt
+# Command: make CacheExample
+# Shows a SplayTree accessing memory locations
+CacheExampleObjs := $(OBJECTS)/CacheExample.o
 
-$(OBJECTS)/BloomURL.o: $(PROG)/BloomURL.cpp
-	$(PP) $(CXXFLAGS) -c $(PROG)/BloomURL.cpp -o $@
+CacheExample: $(CacheExampleObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/CacheExample $(CacheExampleObjs)
+	$(EXE)/./CacheExample
 
-# Initialize 
-initialize:
-	mkdir $(OBJECTS) $(EXE)
+$(OBJECTS)/CacheExample.o: $(PROG)/CacheExample.cpp $(CLASSES)/SplayTree.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/CacheExample.cpp -o $@
+
+
 
 # Make all
-all: SubsetSums BloomURL
+all: SplayTest
+
 
 # Make clean
 clean :
 	rm -rf *.o $(OBJECTS)/* $(EXE)/*
+	
+	
+# Make gitPre
+gitPre:
+	make clean
+	git add Makefile $(CLASSES)/* $(PROG)/*
+	git commit -m "Lecture 24 Preview Assignment"
+	git push
+
+	
+# Make gitIn
+gitIn:
+	make clean
+	git add Makefile $(CLASSES)/* $(PROG)/*
+	git commit -m "Lecture 24 In Class"
+	git push
+	
+	
+# Make gitIn
+gitFix:
+	make clean
+	git add --all
+	git commit -m "Lecture 24 In Class - Fix"
+	git push

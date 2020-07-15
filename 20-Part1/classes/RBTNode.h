@@ -32,7 +32,6 @@ struct RBTNode {
 	// Copy Constructor
 	RBTNode<T>(const RBTNode<T>& copy){
 		if(this != &copy){
-			std::cout << "Da fuq copy?" << std::endl;
 			this->value = copy->value;
 			this->color = copy->color;
 		}
@@ -41,9 +40,7 @@ struct RBTNode {
 	// Assignment Operator
 	RBTNode<T>& operator=(const RBTNode<T>& assign){
 		
-		std::cout << "Da fuq?" << std::endl;
 		if(this != &assign){
-			std::cout << "Da fuq?" << std::endl;
 			this->value = assign->value;
 			this->color = assign->color;
 		}

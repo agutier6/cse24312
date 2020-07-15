@@ -1,7 +1,4 @@
-# Author: Matthew Morrison
-# E-mail: matt.morrison@nd.edu
-#
-# This is the Makefile for the CSE 20312 course Lecture 20 - Part 1
+# This is the Makefile for the CSE 24312 course - Lecture 19 - Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -17,60 +14,76 @@ EXE := executables
 OBJECTS := objects
 
 
-# Command: make SplayTest
-# Shows a successful Splay Tree Test
-SplayTestObjs := $(OBJECTS)/SplayTest.o
+# Command: make testRBTNode1
+# Test initial class for compilation
+testRBTree1Objs := $(OBJECTS)/testRBTree1.o
 
-SplayTest: $(SplayTestObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/SplayTest $(SplayTestObjs)
-	$(EXE)/./SplayTest
+testRBTree1: $(testRBTree1Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testRBTree1 $(testRBTree1Objs)
+	$(EXE)/./testRBTree1
 
-$(OBJECTS)/SplayTest.o: $(PROG)/SplayTest.cpp $(CLASSES)/SplayTree.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/SplayTest.cpp -o $@
-
-
-
-# Command: make CacheExample
-# Shows a SplayTree accessing memory locations
-CacheExampleObjs := $(OBJECTS)/CacheExample.o
-
-CacheExample: $(CacheExampleObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/CacheExample $(CacheExampleObjs)
-	$(EXE)/./CacheExample
-
-$(OBJECTS)/CacheExample.o: $(PROG)/CacheExample.cpp $(CLASSES)/SplayTree.h
-	$(PP) $(CXXFLAGS) -c $(PROG)/CacheExample.cpp -o $@
+$(OBJECTS)/testRBTree1.o: $(PROG)/testRBTree1.cpp $(CLASSES)/RBTree1.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/testRBTree1.cpp -o $@
 
 
+
+# Command: make testRBTNode2
+# Test initial class for compilation
+testRBTree2Objs := $(OBJECTS)/testRBTree2.o
+
+testRBTree2: $(testRBTree2Objs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testRBTree2 $(testRBTree2Objs)
+	$(EXE)/./testRBTree2
+
+$(OBJECTS)/testRBTree2.o: $(PROG)/testRBTree2.cpp $(CLASSES)/RBTree2.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/testRBTree2.cpp -o $@	
+
+
+
+# Command: make RBDelTest
+# Shows a successful RBTree Tree Test
+RBDelTestObjs := $(OBJECTS)/RBDelTest.o
+
+RBDelTest: $(RBDelTestObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/RBDelTest $(RBDelTestObjs)
+	$(EXE)/./RBDelTest
+
+$(OBJECTS)/RBDelTest.o: $(PROG)/RBDelTest.cpp $(CLASSES)/RBTree.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/RBDelTest.cpp -o $@
+
+
+# Command: make treeTest
+# Shows a successful RBTree Tree Test
+treeTestObjs := $(OBJECTS)/treeTest.o
+
+treeTest: $(treeTestObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/treeTest $(treeTestObjs)
+	$(EXE)/./treeTest
+
+$(OBJECTS)/treeTest.o: $(PROG)/treeTest.cpp
+	$(PP) $(CXXFLAGS) -c $(PROG)/treeTest.cpp -o $@
+
+
+
+# Command: make multiSet
+# Shows a successful RBTree Tree Test
+multiSetObjs := $(OBJECTS)/multiSet.o
+
+multiSet: $(multiSetObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/multiSet $(multiSetObjs)
+	$(EXE)/./multiSet
+
+$(OBJECTS)/multiSet.o: $(PROG)/multiSet.cpp
+	$(PP) $(CXXFLAGS) -c $(PROG)/multiSet.cpp -o $@
+	
 
 # Make all
-all: SplayTest
+all: testRBTNode1Objs testRBTNode2Objs RBDelTest treeTest multiSet
 
+# Make initialize
+initialize :
+	mkdir objects executables
 
 # Make clean
 clean :
 	rm -rf *.o $(OBJECTS)/* $(EXE)/*
-	
-	
-# Make gitPre
-gitPre:
-	make clean
-	git add Makefile $(CLASSES)/* $(PROG)/*
-	git commit -m "Lecture 24 Preview Assignment"
-	git push
-
-	
-# Make gitIn
-gitIn:
-	make clean
-	git add Makefile $(CLASSES)/* $(PROG)/*
-	git commit -m "Lecture 24 In Class"
-	git push
-	
-	
-# Make gitIn
-gitFix:
-	make clean
-	git add --all
-	git commit -m "Lecture 24 In Class - Fix"
-	git push

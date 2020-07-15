@@ -231,7 +231,7 @@ class BST{
 		}
 		
 		// Public method - Find and delete the element
-		virtual bool remove( BSTNode<T>*& currPtr, const T& element ){
+		bool remove( BSTNode<T>*& currPtr, const T& element ){
 			
 			// If we hit NULL, element is not in the tree
 			if( currPtr == NULL ){
@@ -371,6 +371,8 @@ class BST{
 		
 		// Public remove method
 		virtual bool remove( const T& element ){
+			
+			contains( element );
 			
 			// Call the private recursive method
 			return remove( root, element );

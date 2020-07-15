@@ -73,6 +73,7 @@ class SplayTree : public BST<T>{
 				
 		}
 	
+		// Zig Level
 		void splay( BSTNode<T>*& valueNode, BSTNode<T>*& curr ){
 			
 			if( valueNode->data < curr->data && curr->left == NULL ){
