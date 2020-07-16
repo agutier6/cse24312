@@ -57,7 +57,6 @@ class SplayTree : public BST<T>{
 				 (tempPar->right == NULL && value > tempPar->data) ){
 				
 				value = tempPar->data;
-				
 				return;
 			}
 			
@@ -160,22 +159,16 @@ class SplayTree : public BST<T>{
 				
 				// We must Zig-Zig or Zig-Zag. Pass curr and parent
 				if( value < curr->data ){
-
-					// Account for Two Levels					
-					splay( value, curr->left, curr );
 					
-					// Fix on the last level 
-					splay( curr, value );
+					splay( value, curr->left, curr );	// Account for Two Levels
 					
+					splay( curr, value );	// Fix on the last level 
 				}
 				else if( value > curr->data ){
 	
-					// Account for Two Levels
-					splay( value, curr->right, curr );
+					splay( value, curr->right, curr );	// Account for Two Levels
 					
-					// Fix on the last level 
-					splay( curr, value );
-					
+					splay( curr, value );	// Fix on the last level
 				}
 				else{
 					

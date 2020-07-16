@@ -1,11 +1,9 @@
-#ifndef TREAP_H
-#define TREAP_H
+#ifndef TREAP2_H
+#define TREAP2_H
 
 #include "TreapNode.h"
 #include "queue.h"
 #include <iostream>
-#include <cstdlib> 
-#include <ctime> 
 
 #define COUT std::cout
 #define ENDL std::endl
@@ -54,7 +52,7 @@ class Treap{
 		// Modification - Insert method 
 		void Insert( TreapNode< T >*& currPtr, const T& value, const double priority ){
 			
-			/******** Part 1 - Insert like a Normal BST **************/
+			/******** Part 1 - Insert like a Normal Treap **************/
 			
 			// If the pointer is Null, we found our location 
 			// Set the pointer to the new value
@@ -74,7 +72,8 @@ class Treap{
 				Insert( currPtr->right, value, priority );
 			}
 			else{
-				// Found a duplicate - Do nothing;
+				// Print that we found a duplicate
+				std::cout << value << " is a duplicate " << std::endl;
 			}
 
 			/******** Part 2 - Recursively Fix Order like a Max Heap **************/
@@ -208,177 +207,6 @@ class Treap{
 			}
 			
 		}
-		
-		// Private method - Find the minimum element
-		TreapNode<T>* findMin( TreapNode<T>* currPtr ) const {
-			
-			// If the pointer is null, return NULL
-			if( currPtr == NULL ){
-				return currPtr;
-			}
-			
-			// If there is no way to go left, return currPtr 
-			if( currPtr->left == NULL ){
-				return currPtr;
-			}
-			
-			// Otherwise, keep going left 
-			return findMin( currPtr->left );
-		}
-		
-		
-		// Private method - Find the minimum element
-		TreapNode<T>* findMax( TreapNode<T>* currPtr ) const {
-			
-			// If the pointer is null, return NULL
-			if( currPtr == NULL ){
-				return currPtr;
-			}
-			
-			// If there is no way to go right, return currPtr 
-			if( currPtr->right == NULL ){
-				return currPtr;
-			}
-			
-			// Otherwise, keep going right 
-			return findMax( currPtr->right );
-		}
-		
-		// Private method - Find and delete the element
-		bool remove( TreapNode<T>*& currPtr, const T& element ){
-
-			/******** Part 1 - Delete like a Normal BST **************/
-			/******** Except set a bool to track so we go to Part 2 for recursive trickle **************/
-
-			bool nodeDeleted = false;
-			
-			// If we hit NULL, element is not in the tree
-			if( currPtr == NULL ){
-				return false;
-			}
-
-			// Otherwise, check left if the element is less than the data
-			if( element < currPtr->data ){
-				nodeDeleted = remove( currPtr->left, element );
-			}
-			
-			// Otherwise, check right if the element is greater than the data			
-			else if( element > currPtr->data ) {
-				nodeDeleted = remove( currPtr->right, element );
-			}
-			
-			// If the parent has two children
-			else if( currPtr->left != NULL && currPtr->right != NULL ){
-				
-				// Set the currNode's data to the min's value 
-				// Pass currPtr->right to get the minimum to the right
-				currPtr->data = findMin( currPtr->right )->data;
-				
-				// Now we have a duplicate value
-				// so recursively delete the duplicate
-				return remove( currPtr->right, currPtr->data );
-			}
-			
-			// If there is only one child 
-			else{
-				
-				// Create a temp Node pointer, just like in Linked Lists 
-				// Make it point to the currPtr
-				TreapNode<T>* temp = currPtr; 
-				
-				// Set the currPtr to the non NULL child
-				currPtr = ( currPtr->left != NULL ) ? currPtr->left : currPtr->right;
-				
-				// Delete temp
-				delete temp;
-				
-				nodeDeleted = true;
-				
-			}
-			
-			/******** Part 2 - Rotate down **************/
-			
-			// If both children are NULL, or we didn't delete anything, just return
-			if( currPtr == NULL || ( currPtr->left == NULL && currPtr->right == NULL ) || !nodeDeleted ){
-			
-				return nodeDeleted;
-				
-			}
-			
-			// Check Right 
-			trickleDownRight( currPtr );
-			trickleDownLeft( currPtr );
-			
-			// If we got here, we had to have deleted
-			return true;
-		}
-		
-		void trickleDownRight(TreapNode<T>*& parent)
-		{
-			
-			if( parent == NULL ){
-				return;
-			}
-			
-			TreapNode<T>* tempPar = parent;
-			TreapNode<T>* tempRight = parent->right;
-			
-			if( tempRight != NULL && tempRight->priority > tempPar->priority ){
-				
-				// Rotate Left 
-				tempPar->right = tempRight->left;
-				tempRight->left = tempPar;
-				
-				parent = tempRight;
-				
-				trickleDownRight( parent->left );
-				trickleDownLeft( parent->left );
-
-			}
-			
-		}
-
-		void trickleDownLeft(TreapNode<T>*& parent)
-		{
-			
-			if( parent == NULL ){
-				return;
-			}
-			
-			TreapNode<T>* tempPar = parent;
-			TreapNode<T>* tempLeft = parent->left;
-			
-			if( tempLeft != NULL && tempLeft->priority > tempPar->priority ){
-				
-				// Rotate Left 
-				tempPar->left = tempLeft->left;
-				tempLeft->left = tempPar;
-				
-				parent = tempLeft;
-				
-				trickleDownRight( parent->right );
-				trickleDownLeft( parent->right );
-
-			}
-			
-		}
-		
-		// Private Recursive Method to find the Max Height
-		unsigned int maxHeight( TreapNode<T>* currPtr ){
-			
-			// Return 0 if there is a NULL ptr
-			if( currPtr == NULL ){
-				return 0;
-			}
-			
-			// Find the max height of the left and right subtrees
-			unsigned int maxHeightLeft = maxHeight( currPtr->left );
-			unsigned int maxHeightRight = maxHeight( currPtr->right );
-			
-			// Return 1 + the maximum of maxHeightLeft and maxHeightRight
-			return 1 + ( ( maxHeightLeft >= maxHeightRight ) ? maxHeightLeft : maxHeightRight );
-			
-		}
 	
 		// Root node pointer
 		TreapNode< T >* root;	
@@ -427,27 +255,9 @@ class Treap{
 		}
 
 		// Insertion with value and priority
-		void Insert( const T& value ){
-			
-			// Seed the Random Number Generator
-		
-			double priority = rand() % 100;
+		void Insert( const T& value, const double priority ){
 			
 			Insert( root, value, priority );
-			
-		}
-		
-		bool remove( const T& element ){
-			
-			// Call the private recursive method
-			return remove( root, element );
-			
-		}
-		
-		// Public maxHeight method
-		unsigned int maxHeight(){
-			
-			return maxHeight( root );
 			
 		}
 		

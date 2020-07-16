@@ -14,7 +14,7 @@ class BST{
 	protected:
 	
 		// Private Insert Method
-		virtual void Insert( BSTNode< T >*& currPtr, const T& value ){
+		void Insert( BSTNode< T >*& currPtr, const T& value ){
 			
 			// If the pointer is Null, we found our location 
 			// Set the pointer to the new value

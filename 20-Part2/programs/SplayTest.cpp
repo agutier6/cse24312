@@ -45,21 +45,12 @@ int main(){
 	
 	SplayTree<int> theTree;
 	
-	insertSplay(theTree, 12);
-	insertSplay(theTree, 10);
-	insertSplay(theTree, 8);
-	insertSplay(theTree, 13);
-	insertSplay(theTree, 11);
-	insertSplay(theTree, 14);
-	insertSplay(theTree, 16);
-	insertSplay(theTree, 15);
-	insertSplay(theTree, 17);
-	insertSplay(theTree, 7);
-	insertSplay(theTree, 9);
+	insertSplay(theTree, 12);	insertSplay(theTree, 10);	insertSplay(theTree, 8);
+	insertSplay(theTree, 13);	insertSplay(theTree, 11);	insertSplay(theTree, 14);
+	insertSplay(theTree, 16);	insertSplay(theTree, 15);	insertSplay(theTree, 17);
+	insertSplay(theTree, 7);	insertSplay(theTree, 9);
 	
-	checkContains(theTree,10);
-	checkContains(theTree,18);
-	checkContains(theTree,15);	
+	checkContains(theTree,10);	checkContains(theTree,18);	checkContains(theTree,15);	
 	checkContains(theTree,6);
 	
 	deleteSplay(theTree, 10);
