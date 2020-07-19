@@ -1,4 +1,4 @@
-# This is the Makefile for the CSE 24312 course - Lecture 19 - Part 2
+# This is the Makefile for the CSE 24312 course - Lecture 21 Part 2
 
 # G++ is for the GCC compiler for C++
 PP := g++
@@ -14,37 +14,49 @@ EXE := executables
 OBJECTS := objects
 
 
-# Command: make treeTest
-# Shows a successful RBTree Tree Test
-treeTestObjs := $(OBJECTS)/treeTest.o
-
-treeTest: $(treeTestObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/treeTest $(treeTestObjs)
-	$(EXE)/./treeTest
-
-$(OBJECTS)/treeTest.o: $(PROG)/treeTest.cpp
-	$(PP) $(CXXFLAGS) -c $(PROG)/treeTest.cpp -o $@
-
-
-
-# Command: make multiSet
-# Shows a successful RBTree Tree Test
-multiSetObjs := $(OBJECTS)/multiSet.o
-
-multiSet: $(multiSetObjs)
-	$(PP) $(CXXFLAGS) -o $(EXE)/multiSet $(multiSetObjs)
-	$(EXE)/./multiSet
-
-$(OBJECTS)/multiSet.o: $(PROG)/multiSet.cpp
-	$(PP) $(CXXFLAGS) -c $(PROG)/multiSet.cpp -o $@
 	
+# Command: make testBH
+# Tests the Treap Insert Results
+testBHObjs := $(OBJECTS)/testBH.o 
+
+testBH: $(testBHObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testBH $(testBHObjs)
+	$(EXE)/./testBH
+
+$(OBJECTS)/testBH.o: $(PROG)/testBH.cpp $(CLASSES)/BinomialHeap.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/testBH.cpp -o $@
+
+
+
+# Command: make testPQ
+# Tests the Treap Insert Results
+testPQObjs := $(OBJECTS)/testPQ.o 
+
+testPQ: $(testPQObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/testPQ $(testPQObjs)
+	$(EXE)/./testPQ
+
+$(OBJECTS)/testPQ.o: $(PROG)/testPQ.cpp $(CLASSES)/PriorityQueue.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/testPQ.cpp -o $@
+
+
+# Command: make PriorityTest
+# Tests the Treap Insert Results
+PriorityTestObjs := $(OBJECTS)/PriorityTest.o 
+
+PriorityTest: $(PriorityTestObjs)
+	$(PP) $(CXXFLAGS) -o $(EXE)/PriorityTest $(PriorityTestObjs)
+	$(EXE)/./PriorityTest
+
+$(OBJECTS)/PriorityTest.o: $(PROG)/PriorityTest.cpp $(CLASSES)/PriorityQueue.h
+	$(PP) $(CXXFLAGS) -c $(PROG)/PriorityTest.cpp -o $@
+
+# Initialize 
+initialize:
+	mkdir $(OBJECTS) $(EXE)
 
 # Make all
-all: treeTest multiSet
-
-# Make initialize
-initialize :
-	mkdir objects executables
+all: testPQ testBH
 
 # Make clean
 clean :
