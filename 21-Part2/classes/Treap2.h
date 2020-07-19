@@ -80,6 +80,7 @@ class Treap{
 			
 			// Check left - If the left child is not NULL and has a higher priority 
 			if( currPtr->left != NULL && value == currPtr->left->data ){
+				
 				// Check left - If the left child is not NULL and has a higher priority 
 				if( currPtr->left->priority > currPtr->priority ){
 					
@@ -110,7 +111,6 @@ class Treap{
 					currPtr = tempRight;
 				}
 			}
-			
 		}
 		
 		// Printing In Order 

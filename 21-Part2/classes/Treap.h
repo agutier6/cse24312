@@ -315,52 +315,56 @@ class Treap{
 		
 		void trickleDownRight(TreapNode<T>*& parent)
 		{
-			
+			// If the node is NULL, just return to prevent seg fault
 			if( parent == NULL ){
 				return;
 			}
 			
+			// Create nodes to the parent and the right child
 			TreapNode<T>* tempPar = parent;
 			TreapNode<T>* tempRight = parent->right;
 			
+			// If right isn't null and the right child has a higher priority
 			if( tempRight != NULL && tempRight->priority > tempPar->priority ){
 				
 				// Rotate Left 
 				tempPar->right = tempRight->left;
 				tempRight->left = tempPar;
 				
+				// Reset called by reference parent to temp right
 				parent = tempRight;
 				
+				// The node we are testing is now parent->left, so check trickle
 				trickleDownRight( parent->left );
 				trickleDownLeft( parent->left );
-
 			}
-			
 		}
 
 		void trickleDownLeft(TreapNode<T>*& parent)
 		{
-			
+			// If the node is NULL, just return to prevent seg fault
 			if( parent == NULL ){
 				return;
 			}
 			
+			// Create nodes to the parent and the left child
 			TreapNode<T>* tempPar = parent;
 			TreapNode<T>* tempLeft = parent->left;
 			
+			// If left isn't null and the left child has a higher priority
 			if( tempLeft != NULL && tempLeft->priority > tempPar->priority ){
 				
-				// Rotate Left 
+				// Rotate Right 
 				tempPar->left = tempLeft->left;
 				tempLeft->left = tempPar;
 				
+				// Reset called by reference parent to temp left
 				parent = tempLeft;
-				
+
+				// Check Right and Left to continue to trickle down				
 				trickleDownRight( parent->right );
 				trickleDownLeft( parent->right );
-
 			}
-			
 		}
 		
 		// Private Recursive Method to find the Max Height

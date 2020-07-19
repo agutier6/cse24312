@@ -6,21 +6,12 @@
 #define COUT std::cout
 #define ENDL std::endl
 
-template< class T >
-void insertAndPrint( Treap<T>& theTreap, T value ){
-	
-	COUT << "Inserting value " << value << "...\n";
-	theTreap.Insert( value );
-	COUT << theTreap << ENDL;
-	COUT << "-----------------------------------------" << ENDL;
-}
-
 int main(){
 	
 	// Call srand exactly once
 	srand( (unsigned)time(0) ); 
 	
-	/* The Hash Table for the Counting Sort */
+	/* Dynamic Array with 100 unsigned ints initialized to 0 */
 	std::vector< unsigned int > distribution( 100, 0 );
 	
 	// Run the test 1000 times 
@@ -41,10 +32,9 @@ int main(){
 		
 	}
 	
+	// Print the distribution
 	for( unsigned int iter = 0; iter < 100; iter++ ){
-		
 		if( distribution.at(iter) != 0 ){
-
 			COUT << iter << " " << distribution.at(iter) << ENDL;
 		}			
 	}

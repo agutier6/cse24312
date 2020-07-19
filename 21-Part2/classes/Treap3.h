@@ -261,7 +261,7 @@ class Treap{
 			
 			// Seed the Random Number Generator
 		
-			double priority = rand() % 100;
+			double priority = rand() % 100;	 // Must include cstdlib 
 			
 			Insert( root, value, priority );
 			

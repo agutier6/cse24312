@@ -22,7 +22,7 @@ struct TreapNode{
 	~TreapNode(){}
 	
 	// Copy Constructor
-	TreapNode(const TreapNode<T>& copy) : data(copy.data), priority( copy.priority ){ }
+	TreapNode(const TreapNode<T>& copy) : data(copy.data), priority( copy.priority ), left(NULL), right(NULL) { }
 	
 	// Assignment Operator
 	TreapNode<T>& operator=(const TreapNode<T>& assign){
@@ -33,7 +33,6 @@ struct TreapNode{
 		}
 		return *this;
 	}
-	
 };
 
 #endif
