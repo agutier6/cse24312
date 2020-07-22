@@ -5,8 +5,8 @@
 template<class T>
 void printInOrder(std::set< T > printTree){
 	
-	for(const T& curr : printTree){
-		
+	for( const T& curr : printTree){
+	
 		std::cout << curr << " ";
 	}
 	std::cout << std::endl;

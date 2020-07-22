@@ -84,6 +84,7 @@ void HashLicense(std::unordered_map< char, int >& HashPlate, char* plate){
 			}
 		}
 	}
+	
 }
 
 /********************************************
@@ -123,6 +124,33 @@ void HashWord(std::unordered_map< char, int >& HashPlate, std::string currWord, 
 	
 }
 
+void checkPlate(std::vector< std::string >& dictionaryVec, char* plateStr){
+	
+	// Get and Hash License Plate
+	std::unordered_map< char, int > HashPlate;
+	
+	// Hash the values of the characters in the license plate  
+	HashLicense(HashPlate, plateStr);
+
+	// Set the string where the final word (solution) will be stored
+	std::string finalWord;
+	
+	// Iterate through each word in the dictionary 
+	for(auto &currWord : dictionaryVec){
+		
+		// Check the word, and update final word if it qualifies
+		// Do not hash currWord if final Word is the same length - Save run time 
+		// Must also account for if no word is found yet (finalWord.length() > 0)
+		if(currWord.length() < finalWord.length() || finalWord.length() == 0)
+			HashWord(HashPlate, currWord, finalWord);
+	}
+	
+	// Print the result to the user 
+	std::cout << "Shortest Word in Dictionary with characters in " 
+		<< plateStr << " is " << finalWord << std::endl;
+	
+}
+
 /********************************************
 * Function Name  : main
 * Pre-conditions : int argc, char** argv
@@ -137,7 +165,7 @@ int main(int argc, char** argv){
 	
 	// Get the inputstream
 	std::ifstream dictionaryFile;
-	if(argc == 3){
+	if(argc == 2){
 		getAndCheckFile(dictionaryFile, argv[1]);
 	}
 	else{
@@ -152,30 +180,18 @@ int main(int argc, char** argv){
 	// Close the ifstream
 	dictionaryFile.close();
 	
-	// Get and Hash License Plate
-	std::unordered_map< char, int > HashPlate;
-	
-	// Hash the values of the characters in the license plate  
-	HashLicense(HashPlate, argv[2]);
-
-	// Set the string where the final word (solution) will be stored
-	std::string finalWord;
-	
-	// Iterate through each word in the dictionary 
-	for(auto &currWord : dictionaryVec){
-		
-		// Do not hash currWord if final Word is the same length - Save run time 
-		// Must also account for if no word is found yet (finalWord.length() > 0)
-		if(currWord.length() < finalWord.length() || finalWord.length() == 0){
-			
-			// Check the word, and update final word if it qualifies
-			HashWord(HashPlate, currWord, finalWord);
-		}
-	}
-	
-	// Print the result to the user 
-	std::cout << "Shortest Word in Dictionary with characters in " 
-		<< argv[1] << " is " << finalWord << std::endl;
+	// In C++11, conversion from char* to string is depricated. Must do it here
+	// Without (char*), it will compile and run. -Wpedantic will throw a warning
+	checkPlate(dictionaryVec, (char*)"RCT100SA");
+	checkPlate(dictionaryVec, (char*)"RT123SO");
+	checkPlate(dictionaryVec, (char*)"AQ10S0K");
+	checkPlate(dictionaryVec, (char*)"TNT055RB");
+	checkPlate(dictionaryVec, (char*)"LET10EE0");
+	checkPlate(dictionaryVec, (char*)"AB1C1D1");
+	checkPlate(dictionaryVec, (char*)"AEI1O2U3");
+	checkPlate(dictionaryVec, (char*)"OTR1N2E3");
+	checkPlate(dictionaryVec, (char*)"AM1E2D3");
+	checkPlate(dictionaryVec, (char*)"SHR5I3I3");
 
 	return 0;
 

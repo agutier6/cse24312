@@ -97,7 +97,7 @@ void HashWord(std::unordered_map< char, int >& HashPlate, std::string currWord, 
 	// Create a temporary Hash for the current work 
 	std::unordered_map< char, int > HashWord;
 	
-	for(int iter = 0; iter < currWord.length(); iter++){
+	for(long unsigned int iter = 0; iter < currWord.length(); iter++){
 		
 		// words.txt contains all uppercase, but some words may contain numbers 
 		if((int)currWord[iter] >= 65 && (int)currWord[iter] <= 90){
@@ -131,40 +131,13 @@ void HashWord(std::unordered_map< char, int >& HashPlate, std::string currWord, 
 	
 }
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : int argc, char** argv
-* Post-conditions: int
-*
-* Main driver function for the program  
-********************************************/
-int main(int argc, char** argv){
-	
-	// Create a Doubly Linked list of dictionary words 
-	std::list< std::string > dictionaryList;
-	
-	// Get the inputstream
-	std::ifstream dictionaryFile;
-	if(argc == 3){
-		getAndCheckFile(dictionaryFile, argv[1]);
-	}
-	else{
-		std::cout << "Number of inputs are wrong" << std::endl;
-		std::cout << "./GoogleForwList [DictionaryFile] [License]" << std::endl;
-		exit(-1);
-	}
-
-	// Get the strings and put in the List
-	getDictionaryWords(dictionaryFile, dictionaryList);
-
-	// Close the ifstream
-	dictionaryFile.close();
+void checkPlate(std::list< std::string >& dictionaryList, char* plateStr){
 	
 	// Get and Hash License Plate
 	std::unordered_map< char, int > HashPlate;
 	
 	// Hash the values of the characters in the license plate  
-	HashLicense(HashPlate, argv[2]);
+	HashLicense(HashPlate, plateStr);
 
 	// Set the string where the final word (solution) will be stored
 	std::string finalWord;
@@ -181,7 +154,51 @@ int main(int argc, char** argv){
 	
 	// Print the result to the user 
 	std::cout << "Shortest Word in Dictionary with characters in " 
-		<< argv[1] << " is " << finalWord << std::endl;
+		<< plateStr << " is " << finalWord << std::endl;
+	
+}
+
+/********************************************
+* Function Name  : main
+* Pre-conditions : int argc, char** argv
+* Post-conditions: int
+*
+* Main driver function for the program  
+********************************************/
+int main(int argc, char** argv){
+	
+	// Create a Doubly Linked list of dictionary words 
+	std::list< std::string > dictionaryList;
+	
+	// Get the inputstream
+	std::ifstream dictionaryFile;
+	if(argc == 2){
+		getAndCheckFile(dictionaryFile, argv[1]);
+	}
+	else{
+		std::cout << "Number of inputs are wrong" << std::endl;
+		std::cout << "./GoogleForwList [DictionaryFile] [License]" << std::endl;
+		exit(-1);
+	}
+
+	// Get the strings and put in the List
+	getDictionaryWords(dictionaryFile, dictionaryList);
+
+	// Close the ifstream
+	dictionaryFile.close();
+	
+	// In C++11, conversion from char* to string is depricated. Must do it here
+	// Without (char*), it will compile and run. -Wpedantic will throw a warning
+	checkPlate(dictionaryList, (char*)"RCT100SA");
+	checkPlate(dictionaryList, (char*)"RT123SO");
+	checkPlate(dictionaryList, (char*)"AQ10S0K");
+	checkPlate(dictionaryList, (char*)"TNT055RB");
+	checkPlate(dictionaryList, (char*)"LET10EE0");
+	checkPlate(dictionaryList, (char*)"AB1C1D1");
+	checkPlate(dictionaryList, (char*)"AEI1O2U3");
+	checkPlate(dictionaryList, (char*)"OTR1N2E3");
+	checkPlate(dictionaryList, (char*)"AM1E2D3");
+	checkPlate(dictionaryList, (char*)"SHR5I3I3");
 
 	return 0;
 

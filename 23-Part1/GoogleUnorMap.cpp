@@ -52,6 +52,7 @@ void getAndCheckFile(std::ifstream& fileStream, std::string fileName){
 void getDictionaryWords(std::ifstream& dictionaryFile, std::unordered_map< std::string, bool >& dictionaryMap){
 	// Get the strings and put in the Forward Hash Table
 	std::string wordIn;
+	int totalWords = 0;
 	while (dictionaryFile >> wordIn)
 	{
 		dictionaryMap.insert( {wordIn, true} );
@@ -130,40 +131,13 @@ void HashWord(std::unordered_map< char, int >& HashPlate, std::string currWord, 
 	
 }
 
-/********************************************
-* Function Name  : main
-* Pre-conditions : int argc, char** argv
-* Post-conditions: int
-*
-* Main driver function for the program  
-********************************************/
-int main(int argc, char** argv){
-	
-	// Create a Hash Table of dictionary words 
-	std::unordered_map< std::string, bool > dictionaryMap;
-	
-	// Get the inputstream
-	std::ifstream dictionaryFile;
-	if(argc == 3){
-		getAndCheckFile(dictionaryFile, argv[1]);
-	}
-	else{
-		std::cout << "Number of inputs are wrong" << std::endl;
-		std::cout << "./GoogleForwHash Table [DictionaryFile] [License]" << std::endl;
-		exit(-1);
-	}
+void checkPlate(std::unordered_map< std::string, bool > dictionaryMap, char* plateStr){
 
-	// Get the strings and put in the Forward Hash Table
-	getDictionaryWords(dictionaryFile, dictionaryMap);
-
-	// Close the ifstream
-	dictionaryFile.close();
-	
 	// Get and Hash License Plate
 	std::unordered_map< char, int > HashPlate;
 	
 	// Hash the values of the characters in the license plate  
-	HashLicense(HashPlate, argv[2]);
+	HashLicense(HashPlate, plateStr);
 
 	// Set the string where the final word (solution) will be stored
 	std::string finalWord;
@@ -179,7 +153,53 @@ int main(int argc, char** argv){
 	
 	// Print the result to the user 
 	std::cout << "Shortest Word in Dictionary with characters in " 
-		<< argv[1] << " is " << finalWord << std::endl;
+		<< plateStr << " is " << finalWord << std::endl;
+
+}
+
+/********************************************
+* Function Name  : main
+* Pre-conditions : int argc, char** argv
+* Post-conditions: int
+*
+* Main driver function for the program  
+********************************************/
+int main(int argc, char** argv){
+	
+	// Create a Hash Table of dictionary words 
+	std::unordered_map< std::string, bool > dictionaryMap;
+	
+	// Get the inputstream
+	std::ifstream dictionaryFile;
+	if(argc == 2){
+		getAndCheckFile(dictionaryFile, argv[1]);
+	}
+	else{
+		std::cout << "Number of inputs are wrong" << std::endl;
+		std::cout << "./GoogleForwHash Table [DictionaryFile] [License]" << std::endl;
+		exit(-1);
+	}
+
+	// Get the strings and put in the Forward Hash Table
+	getDictionaryWords(dictionaryFile, dictionaryMap);
+
+	// Close the ifstream
+	dictionaryFile.close();
+	
+	std::cout << "Capacity is " << dictionaryMap.size() << std::endl;
+	
+	// In C++11, conversion from char* to string is depricated. Must do it here
+	// Without (char*), it will compile and run. -Wpedantic will throw a warning
+	checkPlate(dictionaryMap, (char*)"RCT100SA");
+	checkPlate(dictionaryMap, (char*)"RT123SO");
+	checkPlate(dictionaryMap, (char*)"AQ10S0K");
+	checkPlate(dictionaryMap, (char*)"TNT055RB");
+	checkPlate(dictionaryMap, (char*)"LET10EE0");
+	checkPlate(dictionaryMap, (char*)"AB1C1D1");
+	checkPlate(dictionaryMap, (char*)"AEI1O2U3");
+	checkPlate(dictionaryMap, (char*)"OTR1N2E3");
+	checkPlate(dictionaryMap, (char*)"AM1E2D3");
+	checkPlate(dictionaryMap, (char*)"SHR5I3I3");
 
 	return 0;
 

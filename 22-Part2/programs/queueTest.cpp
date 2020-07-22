@@ -1,4 +1,4 @@
-#include "Student.h"
+#include "../classes/Student.h"
 #include <queue>
 
 int main(){
