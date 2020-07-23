@@ -92,7 +92,7 @@ class Trie{
 			}
 			
 			if( iter < theNode->numChildren() ){
-				
+								
 				return contains( theNode->getChildPtrOrder(iter), word, value + 1 );
 				
 			}

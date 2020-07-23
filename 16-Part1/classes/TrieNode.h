@@ -33,7 +33,7 @@ public:
 
 			}
 			
-			if( childNodes[iter].getLetter() < childChar ){
+			if( childNodes[iter].getLetter() > childChar ){
 				// Greater than the currentChar
 				// Not in Sorted 
 				break;

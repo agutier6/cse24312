@@ -4,7 +4,7 @@
 template<class T>
 class DynArr{
 	
-		private:
+		protected:
 		
 			unsigned int size; // Current number of elements
 			unsigned int capac; // Current capacity
@@ -27,7 +27,7 @@ class DynArr{
 				data(new T[capac]) {}
 				
 				
-			~DynArr(){
+			virtual ~DynArr(){
 				delete [] data;
 			}
 			
